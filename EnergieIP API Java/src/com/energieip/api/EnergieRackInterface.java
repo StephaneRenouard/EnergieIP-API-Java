@@ -13,5 +13,7 @@ public interface EnergieRackInterface {
 	void getRackID();
 
 	void getList();
+	
+	void getTemperature();
 
 }
