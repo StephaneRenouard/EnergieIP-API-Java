@@ -41,7 +41,7 @@ public class EnergieAPI implements EnergieAPIInterface {
 		int return_rack_id = 0;
 		
 		try{
-			return_rack_id = Integer.getInteger(sendMessage(Messages.getRackID));
+			return_rack_id = Integer.parseInt(sendMessage(Messages.getRackID));
 		} catch (Exception e){
 			return_rack_id = 0;
 		}
@@ -103,37 +103,49 @@ public class EnergieAPI implements EnergieAPIInterface {
 		String  message_from_server = "";
 		
 		try {
-			socket =  connect();
+			
+		//Socket socket = new Socket(Parameters.CORE_IP, Parameters.CORE_PORT);
+		socket = null;
+		socket = new Socket("localhost", 8082);
+		//socket =  connect();
 	
 		DataOutputStream outToServer = new DataOutputStream(socket.getOutputStream());
 		
-		//System.out.println("Sending: " + sentence);
+		
+		message = "1234567" + message + "\n";
+		System.out.println("Sending: " + message);
 		outToServer.writeBytes(message);
 		
-		//System.out.println("Waiting for response...");
+		System.out.println("Waiting for response...");
 		
 		BufferedReader in = new BufferedReader(new InputStreamReader(
 				socket.getInputStream()));
 		
 		String inputLine  = "";
 		
+		/*
 		while ((inputLine = in.readLine()) != null) {
 			message_from_server += inputLine;
 		}
+		*/
 		
-		//System.out.println("From Server: " + message_from_server);
+		message_from_server = in.readLine();
 		
-		disconnect(socket);
+		System.out.println("From Server: " + message_from_server);
+		
+		//disconnect(socket);
+		socket.close();
 		
 		} catch (UnknownHostException e) {
 			//e.printStackTrace();
-			message_from_server="ERROR: TCP Client UnknownHostException";
+			System.err.println("ERROR: TCP Client UnknownHostException");
+			message_from_server="-1";
 		} catch (IOException e) {
 			//e.printStackTrace();
-			message_from_server="ERROR: TCP Client IOException";
+			System.err.println("ERROR: TCP Client IOException");
+			message_from_server="-1";
 		}
 			
-		
 		return message_from_server;
 	}
 
