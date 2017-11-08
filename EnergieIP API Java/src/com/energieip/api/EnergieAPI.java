@@ -2,7 +2,7 @@ package com.energieip.api;
 
 import java.util.List;
 
-public class EnergieRack implements EnergieRackInterface {
+public class EnergieAPI implements EnergieAPIInterface {
 	
 	@Override
 	public boolean connect(String IP, int port) {

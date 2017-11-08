@@ -2,7 +2,7 @@ package com.energieip.api;
 
 import java.util.List;
 
-public interface EnergieRackInterface {
+public interface EnergieAPIInterface {
 
 	boolean connect(String IP, int port);
 
