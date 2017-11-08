@@ -4,16 +4,14 @@ import java.util.List;
 
 public interface EnergieAPIInterface {
 
-	boolean connect(String IP, int port);
+	/* 
+	 * Utilities
+	 */
+	
+	int getRackID();
 
-	boolean connect(String IP);
-
-	boolean connect();
-
-	boolean disconnect();
-
-	void getRackID();
-
+	
+	
 	/*
 	 * List
 	 */

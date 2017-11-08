@@ -1,41 +1,55 @@
 package com.energieip.api;
 
+import java.io.BufferedReader;
+import java.io.DataOutputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.Socket;
+import java.net.UnknownHostException;
 import java.util.List;
 
 public class EnergieAPI implements EnergieAPIInterface {
 	
-	@Override
-	public boolean connect(String IP, int port) {
+	private Socket socket;
+	
+	private Socket connect(String IP, int port) throws UnknownHostException, IOException {
 		
-		// use TCP client lib
-		
-		return false;
+		Socket clientSocket = null;
+		clientSocket = new Socket(IP, port);
+		return clientSocket;
 	}
 
-	@Override
-	public boolean connect(String IP) {
-		// TODO Auto-generated method stub
-		return false;
+	private Socket connect(String IP) throws UnknownHostException, IOException {
+			Socket clientSocket = null;
+			clientSocket = new Socket(IP, Parameters.CORE_PORT);
+			return clientSocket;
 	}
 
-	@Override
-	public boolean connect() {
-		// TODO Auto-generated method stub
-		return false;
+	private Socket connect() throws UnknownHostException, IOException {
+		Socket clientSocket = null;
+		clientSocket = new Socket(Parameters.CORE_IP, Parameters.CORE_PORT);
+		return clientSocket;
 	}
 
-	@Override
-	public boolean disconnect() {
-		// TODO Auto-generated method stub
-		return false;
+	private boolean disconnect(Socket socket) throws IOException {
+		socket.close();
+		return socket.isClosed();
 	}
 
-	@Override
-	public void getRackID() {
+	public int getRackID() {
 		
-		// send a rack ID message
+		int return_rack_id = 0;
 		
+		try{
+			return_rack_id = Integer.getInteger(sendMessage(Messages.getRackID));
+		} catch (Exception e){
+			return_rack_id = 0;
+		}
+		
+		return return_rack_id;		
 	}
+
+	
 
 	@Override
 	public List getList() {
@@ -79,15 +93,48 @@ public class EnergieAPI implements EnergieAPIInterface {
 		return 0;
 	}
 	
-	private Object SendTCPMessage(String message){	
+	/**
+	 * Send TCP message and wait for response
+	 * @param message
+	 * @return
+	 */
+	private String sendMessage(String message) {
 		
-		// send message and wait for return;
+		String  message_from_server = "";
 		
-		// get the return and send to analyse
-			//object result = AnalyseReturn(returned_message);
-			//return result (that is an object, typo is done in method
+		try {
+			socket =  connect();
+	
+		DataOutputStream outToServer = new DataOutputStream(socket.getOutputStream());
 		
+		//System.out.println("Sending: " + sentence);
+		outToServer.writeBytes(message);
 		
+		//System.out.println("Waiting for response...");
+		
+		BufferedReader in = new BufferedReader(new InputStreamReader(
+				socket.getInputStream()));
+		
+		String inputLine  = "";
+		
+		while ((inputLine = in.readLine()) != null) {
+			message_from_server += inputLine;
+		}
+		
+		//System.out.println("From Server: " + message_from_server);
+		
+		disconnect(socket);
+		
+		} catch (UnknownHostException e) {
+			//e.printStackTrace();
+			message_from_server="ERROR: TCP Client UnknownHostException";
+		} catch (IOException e) {
+			//e.printStackTrace();
+			message_from_server="ERROR: TCP Client IOException";
+		}
+			
+		
+		return message_from_server;
 	}
 
 }
