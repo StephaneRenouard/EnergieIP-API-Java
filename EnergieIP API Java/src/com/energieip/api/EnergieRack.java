@@ -1,10 +1,14 @@
 package com.energieip.api;
 
-public class EnergieRack implements EnergieRackInterface {
+import java.util.List;
 
+public class EnergieRack implements EnergieRackInterface {
+	
 	@Override
 	public boolean connect(String IP, int port) {
-		// TODO Auto-generated method stub
+		
+		// use TCP client lib
+		
 		return false;
 	}
 
@@ -28,13 +32,61 @@ public class EnergieRack implements EnergieRackInterface {
 
 	@Override
 	public void getRackID() {
-		// TODO Auto-generated method stub
+		
+		// send a rack ID message
 		
 	}
 
 	@Override
-	public void getList() {
+	public List getList() {
 		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List getList_Light_drivers() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List getList_Shutter_drivers() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List getList_TOR_drivers() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List getList_HVAC_drivers() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List getList_groups() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public int getWatchdog() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	
+	private Object SendTCPMessage(String message){	
+		
+		// send message and wait for return;
+		
+		// get the return and send to analyse
+			//object result = AnalyseReturn(returned_message);
+			//return result (that is an object, typo is done in method
+		
 		
 	}
 
