@@ -38,12 +38,12 @@ public class EnergieAPI implements EnergieAPIInterface {
 
 	public int getRackID() {
 		
-		int return_rack_id = 0;
+		int return_rack_id = -1;
 		
 		try{
 			return_rack_id = Integer.parseInt(sendMessage(Messages.getRackID));
 		} catch (Exception e){
-			return_rack_id = 0;
+			return_rack_id = -1;
 		}
 		
 		return return_rack_id;		
@@ -89,8 +89,16 @@ public class EnergieAPI implements EnergieAPIInterface {
 
 	@Override
 	public int getWatchdog() {
-		// TODO Auto-generated method stub
-		return 0;
+
+		int return_watchdog = -1;
+		
+		try{
+			return_watchdog = Integer.parseInt(sendMessage(Messages.getWatchdog));
+		} catch (Exception e){
+			return_watchdog = -1;
+		}
+		
+		return return_watchdog;	
 	}
 	
 	/**

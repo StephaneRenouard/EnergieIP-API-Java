@@ -27,6 +27,7 @@ public interface EnergieAPIInterface {
 	List getList_HVAC_drivers();
 	
 	List getList_groups();
+	
 	/*
 	 * watchdog 
 	 */
