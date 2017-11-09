@@ -52,37 +52,60 @@ public class EnergieAPI implements EnergieAPIInterface {
 	
 
 	@Override
-	public List getList() {
+	public String[] getList() {
+		String return_list = "";
+		
+		try{
+			return_list = sendMessage(Messages.getList);
+		} catch (Exception e){
+			return_list = "-1";
+		}
+		
+		return makeList(return_list);
+	}
+
+
+	@Override
+	public String[] getList_Light_drivers() {
+		String return_list = "";
+		
+		try{
+			return_list = sendMessage(Messages.getList_Light_drivers);
+		} catch (Exception e){
+			return_list = "-1";
+		}
+		
+		return makeList(return_list);
+	}
+	
+
+	@Override
+	public String[] getList_Shutter_drivers() {
+		String return_list = "";
+		
+		try{
+			return_list = sendMessage(Messages.getList_Shutter_drivers);
+		} catch (Exception e){
+			return_list = "-1";
+		}
+		
+		return makeList(return_list);
+	}
+
+	@Override
+	public String[] getList_TOR_drivers() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public List getList_Light_drivers() {
+	public String[] getList_HVAC_drivers() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public List getList_Shutter_drivers() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List getList_TOR_drivers() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List getList_HVAC_drivers() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List getList_groups() {
+	public String[] getList_groups() {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -155,6 +178,18 @@ public class EnergieAPI implements EnergieAPIInterface {
 		}
 			
 		return message_from_server;
+	}
+	
+	/**
+	 * Return List from String
+	 * @param return_list
+	 * @return
+	 */
+	private String[] makeList(String return_list) {
+		
+		String[] myList = return_list.split(";");
+		
+		return myList;
 	}
 
 }
