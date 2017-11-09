@@ -13,7 +13,11 @@ public class TestCommands {
 		System.out.println("TEST ENERGIE API");
 		
 		EnergieAPI energieAPI = new EnergieAPI();
+		
 		System.out.println("RackID=" + energieAPI.getRackID());
+		
+		System.out.println("Watchdog=" + energieAPI.getWatchdog());
+		
 		
 	}
 
