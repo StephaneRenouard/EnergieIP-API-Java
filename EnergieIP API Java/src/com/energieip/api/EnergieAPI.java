@@ -311,7 +311,7 @@ public class EnergieAPI implements EnergieAPIInterface {
 	}
 
 	@Override
-	public boolean setShuterDown(int SA) {
+	public boolean setShutterDown(int SA) {
 		
 		boolean return_value = false;
 		

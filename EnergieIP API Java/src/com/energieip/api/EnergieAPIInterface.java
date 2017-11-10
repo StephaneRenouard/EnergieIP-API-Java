@@ -48,7 +48,7 @@ public interface EnergieAPIInterface {
 	// shutter
 	boolean setShutterUp(int SA);
 	
-	boolean setShuterDown(int SA);
+	boolean setShutterDown(int SA);
 	
 	boolean setShutterStop(int SA);
 	
