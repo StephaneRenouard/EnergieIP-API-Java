@@ -12,4 +12,11 @@ public class Messages {
 	
 	static final public String getList_Shutter_drivers = "getList_Shutter_drivers";
 	
+	static final public String getList_TOR_drivers = "getList_TOR_drivers";
+	
+	static final public String getList_HVAC_drivers = "getList_HVAC_drivers";
+	
+	static final public String getList_groups = "getList_groups";
+	
+	
 }

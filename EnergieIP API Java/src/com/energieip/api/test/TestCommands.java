@@ -15,10 +15,17 @@ public class TestCommands {
 		EnergieAPI energieAPI = new EnergieAPI();
 		
 		System.out.println("RackID=" + energieAPI.getRackID());
-		
+	
 		System.out.println("Watchdog=" + energieAPI.getWatchdog());
 		
 		
+		 String[] list = energieAPI.getList();
+		
+		 for (int i = 0; i < list.length; i++) {
+			System.out.println( list[i]);
+		}
+		System.out.println("Total Drivers = " + list.length);
 	}
-
+		
+		
 }

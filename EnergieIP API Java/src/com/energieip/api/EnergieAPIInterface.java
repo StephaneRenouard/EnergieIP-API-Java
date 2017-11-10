@@ -1,6 +1,6 @@
 package com.energieip.api;
 
-import java.util.List;
+
 
 public interface EnergieAPIInterface {
 

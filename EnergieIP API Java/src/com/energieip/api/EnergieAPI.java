@@ -94,20 +94,41 @@ public class EnergieAPI implements EnergieAPIInterface {
 
 	@Override
 	public String[] getList_TOR_drivers() {
-		// TODO Auto-generated method stub
-		return null;
+		String return_list = "";
+		
+		try{
+			return_list = sendMessage(Messages.getList_TOR_drivers);
+		} catch (Exception e){
+			return_list = "-1";
+		}
+		
+		return makeList(return_list);
 	}
 
 	@Override
 	public String[] getList_HVAC_drivers() {
-		// TODO Auto-generated method stub
-		return null;
+		String return_list = "";
+		
+		try{
+			return_list = sendMessage(Messages.getList_HVAC_drivers);
+		} catch (Exception e){
+			return_list = "-1";
+		}
+		
+		return makeList(return_list);
 	}
 
 	@Override
 	public String[] getList_groups() {
-		// TODO Auto-generated method stub
-		return null;
+		String return_list = "";
+		
+		try{
+			return_list = sendMessage(Messages.getList_groups);
+		} catch (Exception e){
+			return_list = "-1";
+		}
+		
+		return makeList(return_list);
 	}
 
 	@Override
