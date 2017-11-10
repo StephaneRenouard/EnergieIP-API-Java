@@ -1,7 +1,7 @@
 package com.energieip.api;
 
 public class Parameters {
-	
+
 	/*
 	 * IP params
 	 */

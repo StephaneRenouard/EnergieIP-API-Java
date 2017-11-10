@@ -9,20 +9,20 @@ import java.net.UnknownHostException;
 import java.util.List;
 
 public class EnergieAPI implements EnergieAPIInterface {
-	
+
 	private Socket socket;
-	
+
 	private Socket connect(String IP, int port) throws UnknownHostException, IOException {
-		
+
 		Socket clientSocket = null;
 		clientSocket = new Socket(IP, port);
 		return clientSocket;
 	}
 
 	private Socket connect(String IP) throws UnknownHostException, IOException {
-			Socket clientSocket = null;
-			clientSocket = new Socket(IP, Parameters.CORE_PORT);
-			return clientSocket;
+		Socket clientSocket = null;
+		clientSocket = new Socket(IP, Parameters.CORE_PORT);
+		return clientSocket;
 	}
 
 	private Socket connect() throws UnknownHostException, IOException {
@@ -37,97 +37,93 @@ public class EnergieAPI implements EnergieAPIInterface {
 	}
 
 	public int getRackID() {
-		
+
 		int return_rack_id = -1;
-		
-		try{
+
+		try {
 			return_rack_id = Integer.parseInt(sendMessage(Messages.getRackID));
-		} catch (Exception e){
+		} catch (Exception e) {
 			return_rack_id = -1;
 		}
-		
-		return return_rack_id;		
-	}
 
-	
+		return return_rack_id;
+	}
 
 	@Override
 	public String[] getList() {
 		String return_list = "";
-		
-		try{
+
+		try {
 			return_list = sendMessage(Messages.getList);
-		} catch (Exception e){
+		} catch (Exception e) {
 			return_list = "-1";
 		}
-		
+
 		return makeList(return_list);
 	}
-
 
 	@Override
 	public String[] getList_Light_drivers() {
 		String return_list = "";
-		
-		try{
+
+		try {
 			return_list = sendMessage(Messages.getList_Light_drivers);
-		} catch (Exception e){
+		} catch (Exception e) {
 			return_list = "-1";
 		}
-		
+
 		return makeList(return_list);
 	}
-	
 
 	@Override
 	public String[] getList_Shutter_drivers() {
 		String return_list = "";
-		
-		try{
+
+		try {
 			return_list = sendMessage(Messages.getList_Shutter_drivers);
-		} catch (Exception e){
+		} catch (Exception e) {
 			return_list = "-1";
 		}
-		
+
 		return makeList(return_list);
 	}
 
 	@Override
 	public String[] getList_TOR_drivers() {
 		String return_list = "";
-		
-		try{
+
+		try {
 			return_list = sendMessage(Messages.getList_TOR_drivers);
-		} catch (Exception e){
+		} catch (Exception e) {
 			return_list = "-1";
 		}
-		
+
 		return makeList(return_list);
 	}
 
 	@Override
 	public String[] getList_HVAC_drivers() {
 		String return_list = "";
-		
-		try{
+
+		try {
 			return_list = sendMessage(Messages.getList_HVAC_drivers);
-		} catch (Exception e){
+		} catch (Exception e) {
 			return_list = "-1";
 		}
-		
+
 		return makeList(return_list);
 	}
 
 	@Override
 	public String[] getList_groups() {
 		String return_list = "";
-		
-		try{
+
+		try {
 			return_list = sendMessage(Messages.getList_groups);
-		} catch (Exception e){
+		} catch (Exception e) {
 			return_list = "-1";
 		}
-		
+
 		return makeList(return_list);
 	}
 
@@ -135,92 +131,92 @@ public class EnergieAPI implements EnergieAPIInterface {
 	public int getWatchdog() {
 
 		int return_watchdog = -1;
-		
-		try{
+
+		try {
 			return_watchdog = Integer.parseInt(sendMessage(Messages.getWatchdog));
-		} catch (Exception e){
+		} catch (Exception e) {
 			return_watchdog = -1;
 		}
-		
-		return return_watchdog;	
+
+		return return_watchdog;
 	}
-	
+
 	/**
 	 * Send TCP message and wait for response
+	 * 
 	 * @param message
 	 * @return
 	 */
 	private String sendMessage(String message) {
-		
-		String  message_from_server = "";
-		
+
+		String message_from_server = "";
+
 		try {
-			
-		//Socket socket = new Socket(Parameters.CORE_IP, Parameters.CORE_PORT);
-		socket = null;
-		socket = new Socket("localhost", 8082);
-		//socket =  connect();
-	
-		DataOutputStream outToServer = new DataOutputStream(socket.getOutputStream());
-		
-		
-		message = "1234567" + message + "\n";
-		System.out.println("Sending: " + message);
-		outToServer.writeBytes(message);
-		
-		System.out.println("Waiting for response...");
-		
-		BufferedReader in = new BufferedReader(new InputStreamReader(
-				socket.getInputStream()));
-		
-		String inputLine  = "";
-		
-		/*
-		while ((inputLine = in.readLine()) != null) {
-			message_from_server += inputLine;
-		}
-		*/
-		
-		message_from_server = in.readLine();
-		
-		System.out.println("From Server: " + message_from_server);
-		
-		//disconnect(socket);
-		socket.close();
-		
+
+			// Socket socket = new Socket(Parameters.CORE_IP,
+			// Parameters.CORE_PORT);
+			socket = null;
+			socket = new Socket("localhost", 8082);
+			// socket = connect();
+
+			DataOutputStream outToServer = new DataOutputStream(socket.getOutputStream());
+
+			message = "1234567" + message + "\n";
+			System.out.println("Sending: " + message);
+			outToServer.writeBytes(message);
+
+			System.out.println("Waiting for response...");
+
+			BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+
+			String inputLine = "";
+
+			/*
+			 * while ((inputLine = in.readLine()) != null) { message_from_server
+			 * += inputLine; }
+			 */
+
+			message_from_server = in.readLine();
+
+			System.out.println("From Server: " + message_from_server);
+
+			// disconnect(socket);
+			socket.close();
+
 		} catch (UnknownHostException e) {
-			//e.printStackTrace();
+			// e.printStackTrace();
 			System.err.println("ERROR: TCP Client UnknownHostException");
-			message_from_server="-1";
+			message_from_server = "-1";
 		} catch (IOException e) {
-			//e.printStackTrace();
+			// e.printStackTrace();
 			System.err.println("ERROR: TCP Client IOException");
-			message_from_server="-1";
+			message_from_server = "-1";
 		}
-			
+
 		return message_from_server;
 	}
-	
+
 	/**
 	 * Return List from String
+	 * 
 	 * @param return_list
 	 * @return
 	 */
 	private String[] makeList(String return_list) {
-		
+
 		String[] myList = return_list.split(";");
-		
+
 		return myList;
 	}
 
 	@Override
 	public boolean setGroup(int SA, int target_group) {
-		
+
 		boolean return_value = false;
-		
-		try{
-			String result = sendMessage(Messages.setGroup + " " + SA + " " +target_group);
-			
+
+		try {
+			String result = sendMessage(Messages.setGroup + " " + SA + " " + target_group);
+
 			switch (result.trim()) {
 			case "true":
 				return_value = true;
@@ -230,21 +226,21 @@ public class EnergieAPI implements EnergieAPIInterface {
 			default:
 				break;
 			}
-		} catch (Exception e){
+		} catch (Exception e) {
 			// nothing to do
 		}
-		
-		return return_value;	
+
+		return return_value;
 	}
 
 	@Override
 	public boolean setGroupLightPercentage(int group, int percentage) {
-		
+
 		boolean return_value = false;
-		
-		try{
+
+		try {
 			String result = sendMessage(Messages.setGroupLightPercentage + " " + group + " " + percentage);
-			
+
 			switch (result.trim()) {
 			case "true":
 				return_value = true;
@@ -254,21 +250,21 @@ public class EnergieAPI implements EnergieAPIInterface {
 			default:
 				break;
 			}
-		} catch (Exception e){
+		} catch (Exception e) {
 			// nothing to do
 		}
-		
-		return return_value;	
+
+		return return_value;
 	}
 
 	@Override
 	public boolean setIndividualLightPercentage(int SA, int percentage) {
-		
+
 		boolean return_value = false;
-		
-		try{
+
+		try {
 			String result = sendMessage(Messages.setIndividualLightPercentage + " " + SA + " " + percentage);
-			
+
 			switch (result.trim()) {
 			case "true":
 				return_value = true;
@@ -278,21 +274,21 @@ public class EnergieAPI implements EnergieAPIInterface {
 			default:
 				break;
 			}
-		} catch (Exception e){
+		} catch (Exception e) {
 			// nothing to do
 		}
-		
+
 		return return_value;
 	}
 
 	@Override
 	public boolean setShutterUp(int SA) {
-		
+
 		boolean return_value = false;
-		
-		try{
+
+		try {
 			String result = sendMessage(Messages.setShutterUp + " " + SA);
-			
+
 			switch (result.trim()) {
 			case "true":
 				return_value = true;
@@ -302,24 +298,23 @@ public class EnergieAPI implements EnergieAPIInterface {
 			default:
 				break;
 			}
-		} catch (Exception e){
+		} catch (Exception e) {
 			// nothing to do
 		}
-		
+
 		return return_value;
 
 	}
 
 	@Override
 	public boolean setShutterDown(int SA) {
-		
+
 		boolean return_value = false;
-		
-		try{
-		
-			
+
+		try {
+
 			String result = sendMessage(Messages.setShutterDown + " " + SA);
-			
+
 			switch (result.trim()) {
 			case "true":
 				return_value = true;
@@ -329,21 +324,21 @@ public class EnergieAPI implements EnergieAPIInterface {
 			default:
 				break;
 			}
-		} catch (Exception e){
+		} catch (Exception e) {
 			// nothing to do
 		}
-		
+
 		return return_value;
 	}
 
 	@Override
 	public boolean setShutterStop(int SA) {
-		
+
 		boolean return_value = false;
-		
-		try{
+
+		try {
 			String result = sendMessage(Messages.setShutterStop + " " + SA);
-			
+
 			switch (result.trim()) {
 			case "true":
 				return_value = true;
@@ -353,10 +348,10 @@ public class EnergieAPI implements EnergieAPIInterface {
 			default:
 				break;
 			}
-		} catch (Exception e){
+		} catch (Exception e) {
 			// nothing to do
 		}
-		
+
 		return return_value;
 	}
 
