@@ -213,4 +213,151 @@ public class EnergieAPI implements EnergieAPIInterface {
 		return myList;
 	}
 
+	@Override
+	public boolean setGroup(int SA, int target_group) {
+		
+		boolean return_value = false;
+		
+		try{
+			String result = sendMessage(Messages.setGroup + " " + SA + " " +target_group);
+			
+			switch (result.trim()) {
+			case "true":
+				return_value = true;
+				break;
+			case "false":
+				return_value = false;
+			default:
+				break;
+			}
+		} catch (Exception e){
+			// nothing to do
+		}
+		
+		return return_value;	
+	}
+
+	@Override
+	public boolean setGroupLightPercentage(int group, int percentage) {
+		
+		boolean return_value = false;
+		
+		try{
+			String result = sendMessage(Messages.setGroupLightPercentage + " " + group + " " + percentage);
+			
+			switch (result.trim()) {
+			case "true":
+				return_value = true;
+				break;
+			case "false":
+				return_value = false;
+			default:
+				break;
+			}
+		} catch (Exception e){
+			// nothing to do
+		}
+		
+		return return_value;	
+	}
+
+	@Override
+	public boolean setIndividualLightPercentage(int SA, int percentage) {
+		
+		boolean return_value = false;
+		
+		try{
+			String result = sendMessage(Messages.setIndividualLightPercentage + " " + SA + " " + percentage);
+			
+			switch (result.trim()) {
+			case "true":
+				return_value = true;
+				break;
+			case "false":
+				return_value = false;
+			default:
+				break;
+			}
+		} catch (Exception e){
+			// nothing to do
+		}
+		
+		return return_value;
+	}
+
+	@Override
+	public boolean setShutterUp(int SA) {
+		
+		boolean return_value = false;
+		
+		try{
+			String result = sendMessage(Messages.setShutterUp + " " + SA);
+			
+			switch (result.trim()) {
+			case "true":
+				return_value = true;
+				break;
+			case "false":
+				return_value = false;
+			default:
+				break;
+			}
+		} catch (Exception e){
+			// nothing to do
+		}
+		
+		return return_value;
+
+	}
+
+	@Override
+	public boolean setShuterDown(int SA) {
+		
+		boolean return_value = false;
+		
+		try{
+		
+			
+			String result = sendMessage(Messages.setShutterDown + " " + SA);
+			
+			switch (result.trim()) {
+			case "true":
+				return_value = true;
+				break;
+			case "false":
+				return_value = false;
+			default:
+				break;
+			}
+		} catch (Exception e){
+			// nothing to do
+		}
+		
+		return return_value;
+	}
+
+	@Override
+	public boolean setShutterStop(int SA) {
+		
+		boolean return_value = false;
+		
+		try{
+			String result = sendMessage(Messages.setShutterStop + " " + SA);
+			
+			switch (result.trim()) {
+			case "true":
+				return_value = true;
+				break;
+			case "false":
+				return_value = false;
+			default:
+				break;
+			}
+		} catch (Exception e){
+			// nothing to do
+		}
+		
+		return return_value;
+	}
+
 }
