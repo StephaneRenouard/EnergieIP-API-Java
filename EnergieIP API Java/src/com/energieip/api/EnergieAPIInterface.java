@@ -34,6 +34,22 @@ public interface EnergieAPIInterface {
 	int getWatchdog();
 	
 	
+	/*
+	 * Set
+	 */
+	//utilities
+	boolean setGroup(int SA, int target_group);
 	
+	// light
+	boolean setGroupLightPercentage(int group, int percentage);
+	
+	boolean setIndividualLightPercentage(int SA, int percentage);
+	
+	// shutter
+	boolean setShutterUp(int SA);
+	
+	boolean setShuterDown(int SA);
+	
+	boolean setShutterStop(int SA);
 	
 }
