@@ -156,7 +156,7 @@ public class EnergieAPI implements EnergieAPIInterface {
 			// Socket socket = new Socket(Parameters.CORE_IP,
 			// Parameters.CORE_PORT);
 			socket = null;
-			socket = new Socket("localhost", 8082);
+			socket = new Socket(Parameters.CORE_IP, Parameters.CORE_PORT);
 			// socket = connect();
 
 			DataOutputStream outToServer = new DataOutputStream(socket.getOutputStream());
