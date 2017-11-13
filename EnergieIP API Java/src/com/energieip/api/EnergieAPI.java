@@ -25,7 +25,7 @@ public class EnergieAPI implements EnergieAPIInterface {
 		return clientSocket;
 	}
 
-	public Socket connect() throws UnknownHostException, IOException {
+	private Socket connect() throws UnknownHostException, IOException {
 		Socket clientSocket = null;
 		clientSocket = new Socket(Parameters.CORE_IP, Parameters.CORE_PORT);
 		return clientSocket;

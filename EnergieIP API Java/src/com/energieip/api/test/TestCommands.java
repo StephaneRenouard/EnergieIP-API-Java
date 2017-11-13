@@ -1,7 +1,6 @@
 package com.energieip.api.test;
 
-import java.io.IOException;
-import java.net.UnknownHostException;
+
 
 import com.energieip.api.EnergieAPI;
 
@@ -16,8 +15,8 @@ public class TestCommands {
 		System.out.println("TEST ENERGIE API");
 
 		EnergieAPI energieAPI = new EnergieAPI();
-	
 		
+		/*
 		try {
 			energieAPI.connect();
 		} catch (UnknownHostException e) {
@@ -27,8 +26,9 @@ public class TestCommands {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		*/
 
-		// System.out.println("RackID=" + energieAPI.getRackID());
+		System.out.println("RackID=" + energieAPI.getRackID());
 
 		// System.out.println("Watchdog=" + energieAPI.getWatchdog());
 
@@ -71,7 +71,7 @@ public class TestCommands {
 
 		// System.out.println(energieAPI.setGroup(406, 10));
 
-		// energieAPI.setGroupLightPercentage(5, 40);
+		 energieAPI.setGroupLightPercentage(5, 40);
 
 		// energieAPI.setIndividualLightPercentage(56, 011);
 
