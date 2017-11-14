@@ -6,12 +6,13 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.Socket;
 import java.net.UnknownHostException;
-import java.util.List;
+
 
 public class EnergieAPI implements EnergieAPIInterface {
 
 	private Socket socket;
 
+	@SuppressWarnings("unused")
 	private Socket connect(String IP, int port) throws UnknownHostException, IOException {
 
 		Socket clientSocket = null;
@@ -19,18 +20,22 @@ public class EnergieAPI implements EnergieAPIInterface {
 		return clientSocket;
 	}
 
+	@SuppressWarnings("unused")
 	private Socket connect(String IP) throws UnknownHostException, IOException {
 		Socket clientSocket = null;
 		clientSocket = new Socket(IP, Parameters.CORE_PORT);
 		return clientSocket;
 	}
 
+	@SuppressWarnings("unused")
 	private Socket connect() throws UnknownHostException, IOException {
 		Socket clientSocket = null;
+		PropertiesManager.getProperties();
 		clientSocket = new Socket(Parameters.CORE_IP, Parameters.CORE_PORT);
 		return clientSocket;
 	}
 
+	@SuppressWarnings("unused")
 	private boolean disconnect(Socket socket) throws IOException {
 		socket.close();
 		return socket.isClosed();
@@ -152,9 +157,10 @@ public class EnergieAPI implements EnergieAPIInterface {
 		String message_from_server = "";
 
 		try {
-
-			// Socket socket = new Socket(Parameters.CORE_IP,
-			// Parameters.CORE_PORT);
+			
+			// Read properties
+			PropertiesManager.getProperties();
+			
 			socket = null;
 			socket = new Socket(Parameters.CORE_IP, Parameters.CORE_PORT);
 			// socket = connect();
