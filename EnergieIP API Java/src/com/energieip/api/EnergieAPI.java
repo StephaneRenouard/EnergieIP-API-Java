@@ -158,9 +158,6 @@ public class EnergieAPI implements EnergieAPIInterface {
 
 		try {
 			
-			// Read properties
-			PropertiesManager.getProperties();
-			
 			socket = null;
 			socket = new Socket(Parameters.CORE_IP, Parameters.CORE_PORT);
 			// socket = connect();
@@ -359,6 +356,20 @@ public class EnergieAPI implements EnergieAPIInterface {
 		}
 
 		return return_value;
+	}
+
+	@Override
+	public void setTCPserver_IP(String tcpServer_IP) {
+
+		Parameters.CORE_IP = tcpServer_IP;
+		
+	}
+
+	@Override
+	public void setTCPserver_PORT(int tcpServer_PORT) {
+
+		Parameters.CORE_PORT = tcpServer_PORT;
+		
 	}
 
 }

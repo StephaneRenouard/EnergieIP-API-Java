@@ -3,6 +3,14 @@ package com.energieip.api;
 public interface EnergieAPIInterface {
 
 	/*
+	 * TCP parameters
+	 */
+	void setTCPserver_IP(String tcpServer_IP);
+	
+	void setTCPserver_PORT(int tcpServer_PORT);
+	
+	
+	/*
 	 * Utilities
 	 */
 
