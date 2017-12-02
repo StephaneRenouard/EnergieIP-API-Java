@@ -7,7 +7,6 @@ import java.io.InputStreamReader;
 import java.net.Socket;
 import java.net.UnknownHostException;
 
-
 public class EnergieAPI implements EnergieAPIInterface {
 
 	private Socket socket;
@@ -157,7 +156,7 @@ public class EnergieAPI implements EnergieAPIInterface {
 		String message_from_server = "";
 
 		try {
-			
+
 			socket = null;
 			socket = new Socket(Parameters.CORE_IP, Parameters.CORE_PORT);
 			// socket = connect();
@@ -362,19 +361,19 @@ public class EnergieAPI implements EnergieAPIInterface {
 	public void setTCPserver_IP(String tcpServer_IP) {
 
 		Parameters.CORE_IP = tcpServer_IP;
-		
+
 	}
 
 	@Override
 	public void setTCPserver_PORT(int tcpServer_PORT) {
 
 		Parameters.CORE_PORT = tcpServer_PORT;
-		
+
 	}
 
 	@Override
 	public boolean setWatchdog(int watchdog) {
-	
+
 		boolean return_value = false;
 
 		try {
@@ -423,7 +422,7 @@ public class EnergieAPI implements EnergieAPIInterface {
 
 	@Override
 	public boolean scan_WithoutErase() {
-	
+
 		boolean return_value = false;
 
 		try {

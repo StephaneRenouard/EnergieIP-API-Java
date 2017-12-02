@@ -1,7 +1,5 @@
 package com.energieip.api.test;
 
-
-
 import com.energieip.api.EnergieAPI;
 
 public class TestCommands {
@@ -15,33 +13,25 @@ public class TestCommands {
 		System.out.println("TEST ENERGIE API");
 
 		EnergieAPI energieAPI = new EnergieAPI();
-		
-		/*
-		try {
-			energieAPI.connect();
-		} catch (UnknownHostException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		*/
-
-	//	System.out.println("RackID=" + energieAPI.getRackID());
-
-		 System.out.println("Watchdog=" + energieAPI.getWatchdog());
 
 		/*
-		String[] list = energieAPI.getList();
+		 * try { energieAPI.connect(); } catch (UnknownHostException e) { //
+		 * TODO Auto-generated catch block e.printStackTrace(); } catch
+		 * (IOException e) { // TODO Auto-generated catch block
+		 * e.printStackTrace(); }
+		 */
 
-		for (int i = 0; i < list.length; i++) {
-			System.out.println(list[i]);
-		}
-		System.out.println("Total Drivers = " + list.length);
-		*/
-		
-		
+		// System.out.println("RackID=" + energieAPI.getRackID());
+
+		System.out.println("Watchdog=" + energieAPI.getWatchdog());
+
+		/*
+		 * String[] list = energieAPI.getList();
+		 * 
+		 * for (int i = 0; i < list.length; i++) { System.out.println(list[i]);
+		 * } System.out.println("Total Drivers = " + list.length);
+		 */
+
 		/*
 		 * String[] list_light = energieAPI.getList_Light_drivers();
 		 * 
@@ -70,15 +60,9 @@ public class TestCommands {
 		 */
 
 		// System.out.println(energieAPI.setGroup(406, 10));
-		 
-		
+
 		energieAPI.setGroupLightPercentage(5, 100);
-		 
-		
-		 
-	
-					
-		
+
 		// energieAPI.setIndividualLightPercentage(56, 011);
 
 		// energieAPI.setShutterDown(406);

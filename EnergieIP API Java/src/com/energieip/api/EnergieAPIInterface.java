@@ -6,18 +6,17 @@ public interface EnergieAPIInterface {
 	 * TCP parameters
 	 */
 	void setTCPserver_IP(String tcpServer_IP);
-	
+
 	void setTCPserver_PORT(int tcpServer_PORT);
-	
-	
+
 	/*
 	 * Utilities
 	 */
 
 	int getRackID();
-	
+
 	boolean scan_WithErase();
-	
+
 	boolean scan_WithoutErase();
 
 	/*
@@ -44,10 +43,10 @@ public interface EnergieAPIInterface {
 	/*
 	 * Set
 	 */
-	
+
 	// watchdog
 	boolean setWatchdog(int watchdog);
-	
+
 	// utilities
 	boolean setGroup(int SA, int target_group);
 
