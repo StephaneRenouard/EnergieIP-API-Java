@@ -28,9 +28,9 @@ public class TestCommands {
 		}
 		*/
 
-		System.out.println("RackID=" + energieAPI.getRackID());
+	//	System.out.println("RackID=" + energieAPI.getRackID());
 
-		// System.out.println("Watchdog=" + energieAPI.getWatchdog());
+		 System.out.println("Watchdog=" + energieAPI.getWatchdog());
 
 		/*
 		String[] list = energieAPI.getList();
@@ -70,9 +70,15 @@ public class TestCommands {
 		 */
 
 		// System.out.println(energieAPI.setGroup(406, 10));
-
-		 energieAPI.setGroupLightPercentage(5, 40);
-
+		 
+		
+		energieAPI.setGroupLightPercentage(5, 100);
+		 
+		
+		 
+	
+					
+		
 		// energieAPI.setIndividualLightPercentage(56, 011);
 
 		// energieAPI.setShutterDown(406);

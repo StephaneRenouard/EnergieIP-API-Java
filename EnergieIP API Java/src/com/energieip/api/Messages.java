@@ -31,5 +31,7 @@ public class Messages {
 	static final public String setShutterDown = "setShutterDown";
 
 	static final public String setShutterStop = "setShutterStop";
+	
+	static final public String setWatchdog = "setWatchdog";
 
 }

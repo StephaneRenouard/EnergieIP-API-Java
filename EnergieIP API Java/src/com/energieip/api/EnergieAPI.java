@@ -372,4 +372,28 @@ public class EnergieAPI implements EnergieAPIInterface {
 		
 	}
 
+	@Override
+	public boolean setWatchdog(int watchdog) {
+		boolean return_value = false;
+
+		try {
+
+			String result = sendMessage(Messages.setWatchdog + " " + watchdog);
+
+			switch (result.trim()) {
+			case "true":
+				return_value = true;
+				break;
+			case "false":
+				return_value = false;
+			default:
+				break;
+			}
+		} catch (Exception e) {
+			// nothing to do
+		}
+
+		return return_value;
+	}
+
 }

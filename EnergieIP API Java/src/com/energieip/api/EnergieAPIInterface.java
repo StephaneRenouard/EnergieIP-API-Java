@@ -40,6 +40,10 @@ public interface EnergieAPIInterface {
 	/*
 	 * Set
 	 */
+	
+	// watchdog
+	boolean setWatchdog(int watchdog);
+	
 	// utilities
 	boolean setGroup(int SA, int target_group);
 
