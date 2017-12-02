@@ -15,6 +15,10 @@ public interface EnergieAPIInterface {
 	 */
 
 	int getRackID();
+	
+	boolean scan_WithErase();
+	
+	boolean scan_WithoutErase();
 
 	/*
 	 * List
