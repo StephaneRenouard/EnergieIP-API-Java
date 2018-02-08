@@ -63,6 +63,5 @@ public interface EnergieAPIInterface {
 
 	boolean setShutterStop(int SA);
 	
-	
 
 }
