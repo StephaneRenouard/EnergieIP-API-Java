@@ -39,5 +39,10 @@ public class Messages {
 	static final public String scan_WithErase = "scanWithErase";
 
 	static final public String scan_WithoutErase = "scanWithoutErase";
+	
+	static final public String set_Data_1 = "set_Data_1";
+	
+	static final public String set_Data_2 = "set_Data_2";
+	
 
 }

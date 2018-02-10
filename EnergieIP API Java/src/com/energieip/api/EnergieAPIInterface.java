@@ -63,5 +63,10 @@ public interface EnergieAPIInterface {
 
 	boolean setShutterStop(int SA);
 	
+	
+	// developpement tools
+	boolean setData1(int data1);
+	boolean setData2(int data2);
+	
 
 }

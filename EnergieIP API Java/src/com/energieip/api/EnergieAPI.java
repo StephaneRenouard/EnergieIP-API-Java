@@ -445,4 +445,45 @@ public class EnergieAPI implements EnergieAPIInterface {
 		return return_value;
 	}
 
+	@Override
+	public boolean setData1(int data1) {
+
+		boolean return_value = false;
+
+		
+		String result = sendMessage(Messages.set_Data_1 + " " + Integer.toString(data1));
+			
+		switch (result.trim()) {
+			case "true":
+				return_value = true;
+				break;
+			case "false":
+				return_value = false;
+			default:
+				break;
+		}
+			
+		return return_value;
+	}
+
+	@Override
+	public boolean setData2(int data2) {
+		
+		boolean return_value = false;
+		
+		String result = sendMessage(Messages.set_Data_2 + " " + Integer.toString(data2));
+		
+		switch (result.trim()) {
+			case "true":
+				return_value = true;
+				break;
+			case "false":
+				return_value = false;
+			default:
+				break;
+		}	
+		
+		return return_value;
+	}
+
 }
