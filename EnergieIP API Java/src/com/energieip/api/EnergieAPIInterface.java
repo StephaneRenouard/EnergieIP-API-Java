@@ -81,6 +81,7 @@ public interface EnergieAPIInterface {
 	boolean set_HVAC_output_valve1_PWM(int SA, int value);
 	boolean set_HVAC_output_valve2_PWM(int SA, int value);
 			
+	boolean set_HVAC_temp_target(int group, int value);
 	
 	/*
 	 * developpement tools
