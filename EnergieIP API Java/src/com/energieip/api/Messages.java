@@ -44,5 +44,19 @@ public class Messages {
 	
 	static final public String set_Data_2 = "set_Data_2";
 	
+	
+	/*
+	 * HVAC
+	 */
+	static final public String get_HVAC_input_0_10V = "get_HVAC_input_0_10V";
+	static final public String get_HVAC_input_TOR1 = "get_HVAC_input_TOR1";
+	static final public String get_HVAC_input_TOR2 = "get_HVAC_input_TOR2";
+	
+	static final public String set_HVAC_output_valve1_0_10V = "set_HVAC_output_valve1_0_10V";
+	static final public String set_HVAC_output_valve2_0_10V = "set_HVAC_output_valve2_0_10V";
+	static final public String set_HVAC_output_valve1_PWM = "set_HVAC_output_valve1_PWM";
+	static final public String set_HVAC_output_valve2_PWM = "set_HVAC_output_valve2_PWM";
+			
+	
 
 }

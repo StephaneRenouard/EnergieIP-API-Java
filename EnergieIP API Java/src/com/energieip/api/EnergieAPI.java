@@ -486,4 +486,125 @@ public class EnergieAPI implements EnergieAPIInterface {
 		return return_value;
 	}
 
+	@Override
+	public int get_HVAC_input_0_10V(int SA) {
+		
+		int response = -1;
+
+		try {
+			response = Integer.parseInt(sendMessage(Messages.get_HVAC_input_0_10V + " " + Integer.toString(SA)));
+		} catch (Exception e) {
+			response = -1;
+		}
+
+		return response;
+	}
+
+	@Override
+	public int get_HVAC_input_TOR1(int SA) {
+		int response = -1;
+
+		try {
+			response = Integer.parseInt(sendMessage(Messages.get_HVAC_input_TOR1 + " " + Integer.toString(SA)));
+		} catch (Exception e) {
+			response = -1;
+		}
+
+		return response;
+	}
+
+	@Override
+	public int get_HVAC_input_TOR2(int SA) {
+		
+		int response = -1;
+
+		try {
+			response = Integer.parseInt(sendMessage(Messages.get_HVAC_input_TOR2 + " " + Integer.toString(SA)));
+		} catch (Exception e) {
+			response = -1;
+		}
+
+		return response;
+	}
+
+	@Override
+	public boolean set_HVAC_output_valve1_0_10V(int SA, int value) {
+	
+		boolean return_value = false;
+		
+		String result = sendMessage(Messages.set_HVAC_output_valve1_0_10V + " " + Integer.toString(SA) + " " + Integer.toString(value));
+		
+		switch (result.trim()) {
+			case "true":
+				return_value = true;
+				break;
+			case "false":
+				return_value = false;
+			default:
+				break;
+		}	
+		
+		return return_value;
+	}
+
+	@Override
+	public boolean set_HVAC_output_valve2_0_10V(int SA, int value) {
+		
+		boolean return_value = false;
+		
+		String result = sendMessage(Messages.set_HVAC_output_valve2_0_10V + " " + Integer.toString(SA) + " " + Integer.toString(value));
+		
+		switch (result.trim()) {
+			case "true":
+				return_value = true;
+				break;
+			case "false":
+				return_value = false;
+			default:
+				break;
+		}	
+		
+		return return_value;
+	}
+
+	@Override
+	public boolean set_HVAC_output_valve1_PWM(int SA, int value) {
+		
+		boolean return_value = false;
+		
+		String result = sendMessage(Messages.set_HVAC_output_valve1_PWM + " " + Integer.toString(SA) + " " + Integer.toString(value));
+		
+		switch (result.trim()) {
+			case "true":
+				return_value = true;
+				break;
+			case "false":
+				return_value = false;
+			default:
+				break;
+		}	
+		
+		return return_value;
+	}
+
+	@Override
+	public boolean set_HVAC_output_valve2_PWM(int SA, int value) {
+
+		boolean return_value = false;
+		
+		String result = sendMessage(Messages.set_HVAC_output_valve2_PWM + " " + Integer.toString(SA) + " " + Integer.toString(value));
+		
+		switch (result.trim()) {
+			case "true":
+				return_value = true;
+				break;
+			case "false":
+				return_value = false;
+			default:
+				break;
+		}	
+		
+		return return_value;
+	}
+
 }
