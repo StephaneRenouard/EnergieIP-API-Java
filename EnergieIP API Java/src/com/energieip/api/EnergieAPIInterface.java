@@ -17,14 +17,16 @@ public interface EnergieAPIInterface {
 	// rack
 	int getRackID();
 	boolean set_RackID();
-
+	
 	// scan
 	boolean scan_WithErase();
 	boolean scan_WithoutErase();
 
 	// groups
 	boolean setGroup(int SA, int target_group);
+	int get_Group(int SA);
 
+	
 	
 	/*
 	 * List
@@ -79,6 +81,9 @@ public interface EnergieAPIInterface {
 	int get_LED_error(int SA);
 	int get_LED_group(int SA);
 	
+	int get_LED_group_auto(int group);
+	
+	
 	//boolean set_LED_Imax(int SA);   // mA
 	boolean set_LED_percentage(int SA); // %
 	boolean set_LED_start_time(int SA); // sec
@@ -88,6 +93,7 @@ public interface EnergieAPIInterface {
 	int set_LED_version(int SA); // code version
 	int set_LED_error(int SA);
 	int set_LED_group(int SA);
+	
 	
 	boolean setGroupLightPercentage(int group, int percentage);
 	boolean setIndividualLightPercentage(int SA, int percentage);
