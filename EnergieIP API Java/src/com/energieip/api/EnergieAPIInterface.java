@@ -29,7 +29,6 @@ public interface EnergieAPIInterface {
 	/*
 	 * List
 	 */
-
 	String[] getList();
 	String[] getList_Light_drivers();
 	String[] getList_Shutter_drivers();
@@ -49,7 +48,6 @@ public interface EnergieAPIInterface {
 	/*
 	 * LIGHT DRIVER
 	 */
-	
 	boolean setGroupLightPercentage(int group, int percentage);
 	boolean setIndividualLightPercentage(int SA, int percentage);
 
