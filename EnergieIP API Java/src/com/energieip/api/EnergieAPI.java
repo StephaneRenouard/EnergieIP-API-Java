@@ -627,4 +627,24 @@ public class EnergieAPI implements EnergieAPIInterface {
 		return return_value;
 	}
 
+	@Override
+	public boolean set_HVAC_auto(int group, int value) {
+		
+		boolean return_value = false;
+		
+		String result = sendMessage(Messages.set_HVAC_auto + " " + Integer.toString(group) + " " + Integer.toString(value));
+		
+		switch (result.trim()) {
+			case "true":
+				return_value = true;
+				break;
+			case "false":
+				return_value = false;
+			default:
+				break;
+		}	
+		
+		return return_value;
+	}
+
 }

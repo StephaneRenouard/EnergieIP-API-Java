@@ -58,5 +58,7 @@ public class Messages {
 	static final public String set_HVAC_output_valve2_PWM = "set_HVAC_output_valve2_PWM";
 			
 	static final public String set_HVAC_temp_target = "set_HVAC_temp_target";
+	
+	static final public String set_HVAC_auto = "set_HVAC_auto";
 
 }
