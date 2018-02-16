@@ -48,9 +48,50 @@ public interface EnergieAPIInterface {
 	/*
 	 * LIGHT DRIVER
 	 */
+	/*	
+	 
+	public int imax; // R, Imax mA according to driver (0-65535)
+	public int percentage; // RW, % of power applied to appliance (0-100)
+	public int time_to_start; // RW, second, (0-100)
+	public int time_to_stop; // RW, second, (0-100)
+	public int lux_corrected; // R, lux, (0-65535)
+	public int lux; // R, lux, (0-65535)
+	public int temperature; // R, deg C, (0-1200)
+	public int movement; // R, s, no movment from this time =0 means movement
+							// (0-60000)
+	// from ID2
+	public int power; // R, power in W (O-100)
+	public int version; // R, (0-255)
+	public int error; // R, error/sec (0-100)
+	public int group; // RW, (1-99)
+	*/
+	int get_LED_Imax(int SA);   // mA
+	int get_LED_percentage(int SA); // %
+	int get_LED_start_time(int SA); // sec
+	int get_LED_stop_time(int SA); // sec
+	int get_LED_lux_corrected(int SA); // Lux
+	int get_LED_lux(int SA); // Lux
+	int get_LED_temperature(int SA); // 1/10°C
+	int get_LED_movement(int SA); // sec
+	
+	int get_LED_power(int SA); // W
+	int get_LED_version(int SA); // code version
+	int get_LED_error(int SA);
+	int get_LED_group(int SA);
+	
+	//boolean set_LED_Imax(int SA);   // mA
+	boolean set_LED_percentage(int SA); // %
+	boolean set_LED_start_time(int SA); // sec
+	boolean set_LED_stop_time(int SA); // sec
+	
+	int set_LED_power(int SA); // W
+	int set_LED_version(int SA); // code version
+	int set_LED_error(int SA);
+	int set_LED_group(int SA);
+	
 	boolean setGroupLightPercentage(int group, int percentage);
 	boolean setIndividualLightPercentage(int SA, int percentage);
-
+	
 	
 	/*
 	 * BLINDS DRIVER
@@ -58,7 +99,6 @@ public interface EnergieAPIInterface {
 	boolean setShutterUp(int SA);
 	boolean setShutterDown(int SA);
 	boolean setShutterStop(int SA);
-	
 	
 	
 	
