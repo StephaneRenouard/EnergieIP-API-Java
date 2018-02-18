@@ -647,4 +647,136 @@ public class EnergieAPI implements EnergieAPIInterface {
 		return return_value;
 	}
 
+	@Override
+	public boolean set_RackID() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public int get_Group(int SA) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int get_LED_Imax(int SA) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int get_LED_percentage(int SA) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int get_LED_start_time(int SA) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int get_LED_stop_time(int SA) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int get_LED_lux_corrected(int SA) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int get_LED_lux(int SA) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int get_LED_temperature(int SA) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int get_LED_movement(int SA) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int get_LED_power(int SA) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int get_LED_version(int SA) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int get_LED_error(int SA) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int get_LED_group(int SA) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int get_LED_group_auto(int group) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public boolean set_LED_percentage(int SA) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean set_LED_start_time(int SA) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean set_LED_stop_time(int SA) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public int set_LED_power(int SA) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int set_LED_version(int SA) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int set_LED_error(int SA) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int set_LED_group(int SA) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
 }
