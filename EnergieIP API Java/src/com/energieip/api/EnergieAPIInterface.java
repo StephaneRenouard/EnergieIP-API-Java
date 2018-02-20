@@ -27,6 +27,20 @@ public interface EnergieAPIInterface {
 	// groups
 	boolean set_group(int SA, int target_group);
 	int get_group(int SA);
+	
+	// ID2 (generic)
+	int get_DRIVER_power(int SA); // W
+	int get_DRIVER_version(int SA); // code version
+	int get_DRIVER_error(int SA);
+	int get_DRIVER_group(int SA);
+	int get_DRIVER_position_on_switch(int SA);
+	int get_DRIVER_position_on_daughterBoard(int SA);
+	int get_DRIVER_position_on_table(int SA);
+	int get_DRIVER_manufacturing_year(int SA);
+	int get_DRIVER_manufacturing_month(int SA);
+	
+	// type
+	int get_DRIVER_type(int SA);
 
 	
 	/*
@@ -135,8 +149,27 @@ public interface EnergieAPIInterface {
 	
 	
 	/*
-	 * BLINDS DRIVER
+	 * BLIND DRIVER 
 	 */
+	
+	// GET from ID13
+	int get_BLIND_1_state(int SA);
+	int get_BLIND_2_state(int SA);
+	int get_BLIND_windowContact(int SA);
+	
+	// GET from ID2
+	int get_BLIND_power(int SA); // W
+	int get_BLIND_version(int SA); // code version
+	int get_BLIND_error(int SA);
+	int get_BLIND_group(int SA);
+	int get_BLIND_position_on_switch(int SA);
+	int get_BLIND_position_on_daughterBoard(int SA);
+	int get_BLIND_position_on_table(int SA);
+	int get_BLIND_manufacturing_year(int SA);
+	int get_BLIND_manufacturing_month(int SA);
+	
+	
+	
 	boolean set_blind_1_up(int SA);
 	boolean set_blind_1_down(int SA);
 	boolean set_blind1_stop(int SA);
@@ -144,7 +177,6 @@ public interface EnergieAPIInterface {
 	boolean set_blind2_up(int SA);
 	boolean set_blind_2_down(int SA);
 	boolean set_blind_2_stop(int SA);
-	
 	
 	@Deprecated
 	boolean setShutterUp(int SA);
