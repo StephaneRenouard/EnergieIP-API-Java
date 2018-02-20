@@ -162,6 +162,7 @@ public interface EnergieAPIInterface {
 	int get_BLIND_version(int SA); // code version
 	int get_BLIND_error(int SA);
 	int get_BLIND_group(int SA);
+	
 	int get_BLIND_position_on_switch(int SA);
 	int get_BLIND_position_on_daughterBoard(int SA);
 	int get_BLIND_position_on_table(int SA);
@@ -193,7 +194,8 @@ public interface EnergieAPIInterface {
 	/*
 	 *  HVAC DRIVER
 	 */
-	// from ID12
+	
+	// GET from ID12
 	int get_HVAC_fan(int SA);
 	int get_HVAC_input_0_10V(int SA);
 	int get_HVAC_input_TOR1(int SA); // set INT in place of BOOLEAN to get error code 
@@ -204,19 +206,60 @@ public interface EnergieAPIInterface {
 	int get_HVAC_output_valve2_PWM(int SA);
 	int get_HVAC_tachy(int SA);
 	
-	// from ID2
+	// GET from ID2
 	int get_HVAC_power(int SA);
 	int get_HVAC_version(int SA);
 	int get_HVAC_error(int SA);
 	int get_HVAC_group(int SA);
 	
-	// from ID100
+	int get_HVAC_position_on_switch(int SA);
+	int get_HVAC_position_on_daughterBoard(int SA);
+	int get_HVAC_position_on_table(int SA);
+	int get_HVAC_manufacturing_year(int SA);
+	int get_HVAC_manufacturing_month(int SA);
+		
+	//GET from ID100-MODES
 	int get_HVAC_group_auto(int group);
 	int get_HVAC_group_application(int group);
 	int get_HVAC_group_eco(int group);
 	int get_HVAC_group_air_quality(int group);
 	int get_HVAC_group_fan_mod(int group);
-	//int get
+	int get_HVAC_group_watchdog(int group);
+	int get_HVAC_group_on(int group);
+	
+	//GET from ID100-MATERIEL
+	int get_HVAC_group_def_input_Tsensor(int group); // (reg. 201, hardware_inputsensor)
+	int get_HVAC_group_def_temperature_compensation(int group);
+	int get_HVAC_group_def_input_tor1(int group);
+	int get_HVAC_group_def_input_tor2(int group);
+	int get_HVAC_group_def_input_0_10V(int group);
+	int get_HVAC_group_def_output_0_10V_1(int group);
+	int get_HVAC_group_def_output_0_10V_2(int group);
+	int get_HVAC_group_def_polarity_relay_window_closed(int group);
+	int get_HVAC_group_def_dew_point(int group);
+	int get_HVAC_group_def_change_over_heating(int group);
+		
+	/*
+	// HVAC_calibration
+	public int hvac_calibration_CO2_for_10V; // RW, 0-30000, def 200
+	public int hvac_calibration_CO_for_10V; // RW, 0-3000, def 200
+	public int hvac_calibration_T_for_10V; // RW, 0-40, def 28
+	
+	// HVAC_parameters
+	public int hvac_parameters_temp_target; // RW, 100-300, 1/10�C, def 220
+	public int hvac_parameters_temp_offset; // RW, -100-100, %, def 0
+	public int hvac_parameters_temp_offset_ladder; // RW, 1-10, �C, def 3
+	
+	public int hvac_parameters_temporisation_comfort_mode; // RW, 0-240, min, def 0
+	public int hvac_parameters_temporisation_sleep_mode; // RW, 0-720, min, def 10
+	public int hvac_parameters_temporisation_reduced_mode; // RW, 0-720, min, def 5
+	public int hvac_parameters_deadband_comfort_mode; // RW, 0-20, �C, def 2
+	public int hvac_parameters_deadband_sleep_mode; // RW, 0-20, �C, def 4
+	public int hvac_parameters_deadband_reduced_mode; // RW, 0-20, �C, def 6
+	
+	 */
+	
+	
 	
 	boolean set_HVAC_output_valve1_0_10V(int SA, int value);
 	boolean set_HVAC_output_valve2_0_10V(int SA, int value);
