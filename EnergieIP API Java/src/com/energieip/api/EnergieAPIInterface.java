@@ -169,14 +169,17 @@ public interface EnergieAPIInterface {
 	int get_BLIND_manufacturing_month(int SA);
 	
 	
+	// SET from ID13
+	boolean set_BLIND_1_state(int SA, int state);
+	boolean set_BLIND_2_state(int SA, int state);
 	
-	boolean set_blind_1_up(int SA);
-	boolean set_blind_1_down(int SA);
-	boolean set_blind1_stop(int SA);
+	boolean set_BLIND_1_up(int SA);
+	boolean set_BLIND_1_down(int SA);
+	boolean set_BLIND_1_stop(int SA);
 
-	boolean set_blind2_up(int SA);
-	boolean set_blind_2_down(int SA);
-	boolean set_blind_2_stop(int SA);
+	boolean set_BLIND_2_up(int SA);
+	boolean set_BLIND_2_down(int SA);
+	boolean set_BLIND_2_stop(int SA);
 	
 	@Deprecated
 	boolean setShutterUp(int SA);
