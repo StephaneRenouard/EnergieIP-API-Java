@@ -1,5 +1,7 @@
 package com.energieip.api;
 
+
+
 public interface EnergieAPIInterface {
 
 	/*
@@ -15,27 +17,29 @@ public interface EnergieAPIInterface {
 	 */
 	
 	// rack
-	int get_RackID();
-	boolean set_RackID();
+	int get_rackID();
+	boolean set_rackID();
 	
 	// scan
-	boolean scan_WithErase();
-	boolean scan_WithoutErase();
+	boolean scan_withErase();
+	boolean scan_withoutErase();
 
 	// groups
-	boolean set_Group(int SA, int target_group);
-	int get_Group(int SA);
+	boolean set_group(int SA, int target_group);
+	int get_group(int SA);
 
 	
 	/*
 	 * List
 	 */
-	String[] get_List();
-	String[] get_List_Light_drivers();
-	String[] get_List_Shutter_drivers();
-	String[] get_List_TOR_drivers();
-	String[] get_List_HVAC_drivers();
-	String[] get_List_groups();
+	String[] get_list();
+	String[] get_list_light_drivers();
+	String[] get_list_blind_drivers();
+	String[] get_list_TOR_drivers();
+	String[] get_list_HVAC_drivers();
+	String[] get_list_groups();
+	@Deprecated
+	String[] get_list_shutter_drivers();
 
 	
 	/*
@@ -48,6 +52,7 @@ public interface EnergieAPIInterface {
 	/*
 	 * LIGHT DRIVER
 	 */
+	// GET from ID11
 	int get_LED_Imax(int SA);   // mA
 	int get_LED_percentage(int SA); // %
 	int get_LED_start_time(int SA); // sec
@@ -57,28 +62,76 @@ public interface EnergieAPIInterface {
 	int get_LED_temperature(int SA); // 1/10°C
 	int get_LED_movement(int SA); // sec
 	
+	// GET from ID2
 	int get_LED_power(int SA); // W
 	int get_LED_version(int SA); // code version
 	int get_LED_error(int SA);
 	int get_LED_group(int SA);
-	
+	int get_LED_position_on_switch(int SA);
+	int get_LED_position_on_daughterBoard(int SA);
+	int get_LED_position_on_table(int SA);
+	int get_LED_manufacturing_year(int SA);
+	int get_LED_manufacturing_month(int SA);
+		
+	// GET from ID100-MODES
 	int get_LED_group_auto(int group);
+	int get_LED_group_application(int group);
+	int get_LED_group_watchdog(int group);
+	
+	// GET from ID100-LIGHT
+	int get_LED_group_lux_target(int group);
+	int get_LED_group_correction_interval(int group);
+	int get_LED_group_occupency_time(int group);
+	int get_LED_group_night_threshold(int group);
+	int get_LED_group_followMe_previous(int group);
+	int get_LED_group_followMe_next(int group);
+	int get_LED_group_ramping_up(int group);
+	int get_LED_group_ramping_down(int group);
+	int get_LED_group_lux_correctionFactor_night(int group);
+	int get_LED_group_lux_correctionFactor_day(int group);
+	int get_LED_group_start_Threshold(int group);
+		
+	// GET from ID100-STATUS
+	int get_LED_group_temperature();
+	int get_LED_group_temperature_corrected();
+	int get_LED_group_lux();
+	int get_LED_group_lux_corrected();
+	int get_LED_group_occupency_time_505(int group);
+	int get_LED_group_sensorAdress(int group);
 	
 	
-	//boolean set_LED_Imax(int SA);   // mA
+	// SET from ID11
+	boolean set_LED_Imax(int SA);   // mA
 	boolean set_LED_percentage(int SA); // %
 	boolean set_LED_start_time(int SA); // sec
 	boolean set_LED_stop_time(int SA); // sec
 	
-	int set_LED_power(int SA); // W
-	int set_LED_version(int SA); // code version
-	int set_LED_error(int SA);
-	int set_LED_group(int SA);
+	// SET from ID2
+	boolean set_LED_group(int SA, int group);
 	
 	@Deprecated
 	boolean setGroupLightPercentage(int group, int percentage);
 	@Deprecated
 	boolean setIndividualLightPercentage(int SA, int percentage);
+	
+	// SET from ID100-MODES
+	boolean set_LED_group_auto(int group);
+	boolean set_LED_group_application(int group);
+	boolean set_LED_group_watchdog(int group);
+	
+	// SET from ID100-LIGHT
+	boolean set_LED_group_lux_target(int group);
+	boolean set_LED_group_correction_interval(int group);
+	boolean set_LED_group_occupency_time(int group);
+	boolean set_LED_group_night_threshold(int group);
+	boolean set_LED_group_followMe_previous(int group);
+	boolean set_LED_group_followMe_next(int group);
+	boolean set_LED_group_ramping_up(int group);
+	boolean set_LED_group_ramping_down(int group);
+	boolean set_LED_group_lux_correctionFactor_night(int group);
+	boolean set_LED_group_lux_correctionFactor_day(int group);
+	boolean set_LED_group_start_Threshold(int group);
+
 	
 	
 	/*
@@ -101,13 +154,35 @@ public interface EnergieAPIInterface {
 	boolean setShutterStop(int SA);
 	
 	
+	
 	/*
 	 *  HVAC DRIVER
 	 */
+	// from ID12
+	int get_HVAC_fan(int SA);
 	int get_HVAC_input_0_10V(int SA);
 	int get_HVAC_input_TOR1(int SA); // set INT in place of BOOLEAN to get error code 
 	int get_HVAC_input_TOR2(int SA); // set INT in place of BOOLEAN to get error code
-		
+	int get_HVAC_output_valve1_0_10V(int SA);
+	int get_HVAC_output_valve2_0_10V(int SA);
+	int get_HVAC_output_valve1_PWM(int SA);
+	int get_HVAC_output_valve2_PWM(int SA);
+	int get_HVAC_tachy(int SA);
+	
+	// from ID2
+	int get_HVAC_power(int SA);
+	int get_HVAC_version(int SA);
+	int get_HVAC_error(int SA);
+	int get_HVAC_group(int SA);
+	
+	// from ID100
+	int get_HVAC_group_auto(int group);
+	int get_HVAC_group_application(int group);
+	int get_HVAC_group_eco(int group);
+	int get_HVAC_group_air_quality(int group);
+	int get_HVAC_group_fan_mod(int group);
+	//int get
+	
 	boolean set_HVAC_output_valve1_0_10V(int SA, int value);
 	boolean set_HVAC_output_valve2_0_10V(int SA, int value);
 	boolean set_HVAC_output_valve1_PWM(int SA, int value);
