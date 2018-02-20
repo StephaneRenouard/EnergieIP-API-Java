@@ -40,7 +40,7 @@ public class EnergieAPI implements EnergieAPIInterface {
 		return socket.isClosed();
 	}
 
-	public int getRackID() {
+	public int get_RackID() {
 
 		int return_rack_id = -1;
 
@@ -54,7 +54,7 @@ public class EnergieAPI implements EnergieAPIInterface {
 	}
 
 	@Override
-	public String[] getList() {
+	public String[] get_List() {
 		String return_list = "";
 
 		try {
@@ -67,7 +67,7 @@ public class EnergieAPI implements EnergieAPIInterface {
 	}
 
 	@Override
-	public String[] getList_Light_drivers() {
+	public String[] get_List_Light_drivers() {
 		String return_list = "";
 
 		try {
@@ -80,7 +80,7 @@ public class EnergieAPI implements EnergieAPIInterface {
 	}
 
 	@Override
-	public String[] getList_Shutter_drivers() {
+	public String[] get_List_Shutter_drivers() {
 		String return_list = "";
 
 		try {
@@ -93,7 +93,7 @@ public class EnergieAPI implements EnergieAPIInterface {
 	}
 
 	@Override
-	public String[] getList_TOR_drivers() {
+	public String[] get_List_TOR_drivers() {
 		String return_list = "";
 
 		try {
@@ -106,7 +106,7 @@ public class EnergieAPI implements EnergieAPIInterface {
 	}
 
 	@Override
-	public String[] getList_HVAC_drivers() {
+	public String[] get_List_HVAC_drivers() {
 		String return_list = "";
 
 		try {
@@ -119,7 +119,7 @@ public class EnergieAPI implements EnergieAPIInterface {
 	}
 
 	@Override
-	public String[] getList_groups() {
+	public String[] get_List_groups() {
 		String return_list = "";
 
 		try {
@@ -132,7 +132,7 @@ public class EnergieAPI implements EnergieAPIInterface {
 	}
 
 	@Override
-	public int getWatchdog() {
+	public int get_Watchdog() {
 
 		int return_watchdog = -1;
 
@@ -212,7 +212,7 @@ public class EnergieAPI implements EnergieAPIInterface {
 	}
 
 	@Override
-	public boolean setGroup(int SA, int target_group) {
+	public boolean set_Group(int SA, int target_group) {
 
 		boolean return_value = false;
 
@@ -236,6 +236,7 @@ public class EnergieAPI implements EnergieAPIInterface {
 	}
 
 	@Override
+	@Deprecated
 	public boolean setGroupLightPercentage(int group, int percentage) {
 
 		boolean return_value = false;
@@ -284,6 +285,7 @@ public class EnergieAPI implements EnergieAPIInterface {
 	}
 
 	@Override
+	@Deprecated
 	public boolean setShutterUp(int SA) {
 
 		boolean return_value = false;
@@ -309,6 +311,7 @@ public class EnergieAPI implements EnergieAPIInterface {
 	}
 
 	@Override
+	@Deprecated
 	public boolean setShutterDown(int SA) {
 
 		boolean return_value = false;
@@ -334,6 +337,7 @@ public class EnergieAPI implements EnergieAPIInterface {
 	}
 
 	@Override
+	@Deprecated
 	public boolean setShutterStop(int SA) {
 
 		boolean return_value = false;
@@ -358,21 +362,21 @@ public class EnergieAPI implements EnergieAPIInterface {
 	}
 
 	@Override
-	public void setTCPserver_IP(String tcpServer_IP) {
+	public void set_TCPserver_IP(String tcpServer_IP) {
 
 		Parameters.CORE_IP = tcpServer_IP;
 
 	}
 
 	@Override
-	public void setTCPserver_PORT(int tcpServer_PORT) {
+	public void set_TCPserver_PORT(int tcpServer_PORT) {
 
 		Parameters.CORE_PORT = tcpServer_PORT;
 
 	}
 
 	@Override
-	public boolean setWatchdog(int watchdog) {
+	public boolean set_Watchdog(int watchdog) {
 
 		boolean return_value = false;
 
@@ -446,7 +450,7 @@ public class EnergieAPI implements EnergieAPIInterface {
 	}
 
 	@Override
-	public boolean setData1(int data1) {
+	public boolean set_data1(int data1) {
 
 		boolean return_value = false;
 
@@ -467,7 +471,7 @@ public class EnergieAPI implements EnergieAPIInterface {
 	}
 
 	@Override
-	public boolean setData2(int data2) {
+	public boolean set_data2(int data2) {
 		
 		boolean return_value = false;
 		
@@ -777,6 +781,55 @@ public class EnergieAPI implements EnergieAPIInterface {
 	public int set_LED_group(int SA) {
 		// TODO Auto-generated method stub
 		return 0;
+	}
+
+	
+	@Override
+	public boolean set_blind_1_up(int SA) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean set_blind_1_down(int SA) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean set_blind1_stop(int SA) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean set_blind2_up(int SA) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean set_blind_2_down(int SA) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean set_blind_2_stop(int SA) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean setData1(int data1) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean setData2(int data2) {
+		// TODO Auto-generated method stub
+		return false;
 	}
 
 }

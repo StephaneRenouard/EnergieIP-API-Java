@@ -6,8 +6,8 @@ public interface EnergieAPIInterface {
 	 * TCP parameters
 	 */
 	
-	void setTCPserver_IP(String tcpServer_IP);
-	void setTCPserver_PORT(int tcpServer_PORT);
+	void set_TCPserver_IP(String tcpServer_IP);
+	void set_TCPserver_PORT(int tcpServer_PORT);
 
 	
 	/*
@@ -15,7 +15,7 @@ public interface EnergieAPIInterface {
 	 */
 	
 	// rack
-	int getRackID();
+	int get_RackID();
 	boolean set_RackID();
 	
 	// scan
@@ -23,50 +23,31 @@ public interface EnergieAPIInterface {
 	boolean scan_WithoutErase();
 
 	// groups
-	boolean setGroup(int SA, int target_group);
+	boolean set_Group(int SA, int target_group);
 	int get_Group(int SA);
 
-	
 	
 	/*
 	 * List
 	 */
-	String[] getList();
-	String[] getList_Light_drivers();
-	String[] getList_Shutter_drivers();
-	String[] getList_TOR_drivers();
-	String[] getList_HVAC_drivers();
-	String[] getList_groups();
+	String[] get_List();
+	String[] get_List_Light_drivers();
+	String[] get_List_Shutter_drivers();
+	String[] get_List_TOR_drivers();
+	String[] get_List_HVAC_drivers();
+	String[] get_List_groups();
 
 	
 	/*
 	 * watchdog
 	 */
-	int getWatchdog();
-	boolean setWatchdog(int watchdog);
+	int get_Watchdog();
+	boolean set_Watchdog(int watchdog);
 
 	
-
 	/*
 	 * LIGHT DRIVER
 	 */
-	/*	
-	 
-	public int imax; // R, Imax mA according to driver (0-65535)
-	public int percentage; // RW, % of power applied to appliance (0-100)
-	public int time_to_start; // RW, second, (0-100)
-	public int time_to_stop; // RW, second, (0-100)
-	public int lux_corrected; // R, lux, (0-65535)
-	public int lux; // R, lux, (0-65535)
-	public int temperature; // R, deg C, (0-1200)
-	public int movement; // R, s, no movment from this time =0 means movement
-							// (0-60000)
-	// from ID2
-	public int power; // R, power in W (O-100)
-	public int version; // R, (0-255)
-	public int error; // R, error/sec (0-100)
-	public int group; // RW, (1-99)
-	*/
 	int get_LED_Imax(int SA);   // mA
 	int get_LED_percentage(int SA); // %
 	int get_LED_start_time(int SA); // sec
@@ -94,18 +75,30 @@ public interface EnergieAPIInterface {
 	int set_LED_error(int SA);
 	int set_LED_group(int SA);
 	
-	
+	@Deprecated
 	boolean setGroupLightPercentage(int group, int percentage);
+	@Deprecated
 	boolean setIndividualLightPercentage(int SA, int percentage);
 	
 	
 	/*
 	 * BLINDS DRIVER
 	 */
-	boolean setShutterUp(int SA);
-	boolean setShutterDown(int SA);
-	boolean setShutterStop(int SA);
+	boolean set_blind_1_up(int SA);
+	boolean set_blind_1_down(int SA);
+	boolean set_blind1_stop(int SA);
+
+	boolean set_blind2_up(int SA);
+	boolean set_blind_2_down(int SA);
+	boolean set_blind_2_stop(int SA);
 	
+	
+	@Deprecated
+	boolean setShutterUp(int SA);
+	@Deprecated
+	boolean setShutterDown(int SA);
+	@Deprecated
+	boolean setShutterStop(int SA);
 	
 	
 	/*
@@ -128,7 +121,12 @@ public interface EnergieAPIInterface {
 	/*
 	 * development tools
 	 */
+	boolean set_data1(int data1);
+	boolean set_data2(int data2);
+	
+	@Deprecated
 	boolean setData1(int data1);
+	@Deprecated
 	boolean setData2(int data2);
 	
 

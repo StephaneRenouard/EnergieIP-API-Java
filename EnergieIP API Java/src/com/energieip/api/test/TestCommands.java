@@ -24,7 +24,7 @@ public class TestCommands {
 
 		// System.out.println("RackID=" + energieAPI.getRackID());
 
-		System.out.println("Watchdog=" + energieAPI.getWatchdog());
+		System.out.println("Watchdog=" + energieAPI.get_Watchdog());
 
 		/*
 		 * String[] list = energieAPI.getList();
