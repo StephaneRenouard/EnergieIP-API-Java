@@ -1,5 +1,12 @@
 package com.energieip.api;
 
+/**
+ * The Messages class allow messaging system over TCP from API to Core. 
+ * @author stephane@energie-ip.com
+ * 
+ * This class is used by default by Core.
+ *
+ */
 public class Messages {
 
 	// getter
