@@ -1,5 +1,8 @@
 package com.energieip.api;
 
+import com.energieip.api.interfaces.EnergieAPIInterface;
+import com.energieip.api.interfaces.EnergieCOMInterface;
+
 /**
  * ENERGIEIP JAVA API 
  * @author stephane@energie-ip.com
