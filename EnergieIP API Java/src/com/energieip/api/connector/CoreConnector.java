@@ -8,7 +8,6 @@ import java.net.Socket;
 import java.net.UnknownHostException;
 
 import com.energieip.api.Parameters;
-import com.energieip.api.PropertiesManager;
 
 /**
  * This class implements the connection mecanism to CORE
@@ -45,9 +44,7 @@ public class CoreConnector {
 			System.out.println("Waiting for response...");
 
 			BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-
-			String inputLine = "";
-
+			
 			/*
 			 * while ((inputLine = in.readLine()) != null) { message_from_server
 			 * += inputLine; }
