@@ -19,34 +19,6 @@ public class CoreConnector {
 	
 	private Socket socket;
 	
-	@SuppressWarnings("unused")
-	private Socket connect(String IP, int port) throws UnknownHostException, IOException {
-
-		Socket clientSocket = null;
-		clientSocket = new Socket(IP, port);
-		return clientSocket;
-	}
-
-	@SuppressWarnings("unused")
-	private Socket connect(String IP) throws UnknownHostException, IOException {
-		Socket clientSocket = null;
-		clientSocket = new Socket(IP, Parameters.CORE_PORT);
-		return clientSocket;
-	}
-
-	@SuppressWarnings("unused")
-	private Socket connect() throws UnknownHostException, IOException {
-		Socket clientSocket = null;
-		PropertiesManager.getProperties();
-		clientSocket = new Socket(Parameters.CORE_IP, Parameters.CORE_PORT);
-		return clientSocket;
-	}
-
-	@SuppressWarnings("unused")
-	private boolean disconnect(Socket socket) throws IOException {
-		socket.close();
-		return socket.isClosed();
-	}
 	
 	/**
 	 * Send TCP message and wait for response
