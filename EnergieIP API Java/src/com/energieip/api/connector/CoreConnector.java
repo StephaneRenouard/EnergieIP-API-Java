@@ -1,4 +1,4 @@
-package com.energieip.api;
+package com.energieip.api.connector;
 
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
@@ -6,6 +6,9 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.Socket;
 import java.net.UnknownHostException;
+
+import com.energieip.api.Parameters;
+import com.energieip.api.PropertiesManager;
 
 /**
  * This class implements the connection mecanism to CORE
