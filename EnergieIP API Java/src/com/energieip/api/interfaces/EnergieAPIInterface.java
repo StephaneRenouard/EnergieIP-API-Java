@@ -7,7 +7,6 @@ public interface EnergieAPIInterface {
 	/*
 	 * Utilities
 	 */
-	
 	// rack
 	int get_rackID();
 	boolean set_rackID();
