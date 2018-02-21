@@ -7,7 +7,7 @@ package com.energieip.api;
  * this class implements the EnergieAPIInterface definition.
  *
  */
-public class EnergieAPI implements EnergieAPIInterface {
+public class EnergieAPI implements EnergieAPIInterface, EnergieCOMInterface {
 	
 	
 	/**
@@ -23,18 +23,34 @@ public class EnergieAPI implements EnergieAPIInterface {
 		return myList;
 	}
 
+	// ------------------------------------------------------------------------------------------------------------------------
+	
+	/* COM Interface
+	 * (non-Javadoc)
+	 * @see com.energieip.api.EnergieCOMInterface#set_TCPserver_IP(java.lang.String)
+	 */
 	@Override
 	public void set_TCPserver_IP(String tcpServer_IP) {
 		// TODO Auto-generated method stub
 		
 	}
 
+	/* COM Interface
+	 * (non-Javadoc)
+	 * @see com.energieip.api.EnergieCOMInterface#set_TCPserver_PORT(int)
+	 */
 	@Override
 	public void set_TCPserver_PORT(int tcpServer_PORT) {
 		// TODO Auto-generated method stub
 		
 	}
 
+	// ------------------------------------------------------------------------------------------------------------------------
+	
+	/* EnergieAPI Interface
+	 * (non-Javadoc)
+	 * @see com.energieip.api.EnergieAPIInterface#get_rackID()
+	 */
 	@Override
 	public int get_rackID() {
 		// TODO Auto-generated method stub
