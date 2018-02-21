@@ -1,4 +1,4 @@
-package com.energieip.api;
+package com.energieip.api.connector;
 
 /**
  * The Messages class allow messaging system over TCP from API to Core. 
