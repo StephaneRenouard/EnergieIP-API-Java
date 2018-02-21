@@ -240,56 +240,140 @@ public class EnergieAPI implements EnergieAPIInterface, EnergieCOMInterface {
 
 	@Override
 	public String[] get_list() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		String return_list = "";
+
+		try {
+			return_list = connector.sendMessage(Messages.get_List);
+		} catch (Exception e) {
+			return_list = "-1";
+		}
+
+		return makeList(return_list);
 	}
 
 	@Override
 	public String[] get_list_light_drivers() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		String return_list = "";
+
+		try {
+			return_list = connector.sendMessage(Messages.get_List_Light_drivers);
+		} catch (Exception e) {
+			return_list = "-1";
+		}
+
+		return makeList(return_list);
 	}
 
 	@Override
 	public String[] get_list_blind_drivers() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		String return_list = "";
+
+		try {
+			return_list = connector.sendMessage(Messages.get_List_Blind_drivers);
+		} catch (Exception e) {
+			return_list = "-1";
+		}
+
+		return makeList(return_list);
 	}
 
 	@Override
 	public String[] get_list_TOR_drivers() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		String return_list = "";
+
+		try {
+			return_list = connector.sendMessage(Messages.get_List_TOR_drivers);
+		} catch (Exception e) {
+			return_list = "-1";
+		}
+
+		return makeList(return_list);
 	}
 
 	@Override
 	public String[] get_list_HVAC_drivers() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		String return_list = "";
+
+		try {
+			return_list = connector.sendMessage(Messages.get_List_HVAC_drivers);
+		} catch (Exception e) {
+			return_list = "-1";
+		}
+
+		return makeList(return_list);
 	}
 
 	@Override
 	public String[] get_list_groups() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		String return_list = "";
+
+		try {
+			return_list = connector.sendMessage(Messages.get_List_groups);
+		} catch (Exception e) {
+			return_list = "-1";
+		}
+
+		return makeList(return_list);
+
 	}
 
 	@Override
 	public String[] get_list_shutter_drivers() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		String return_list = "";
+
+		try {
+			return_list = connector.sendMessage(Messages.get_List_Shutter_drivers);
+		} catch (Exception e) {
+			return_list = "-1";
+		}
+
+		return makeList(return_list);
 	}
 
 	@Override
 	public int get_Watchdog() {
-		// TODO Auto-generated method stub
-		return 0;
+		int return_watchdog = -1;
+
+		try {
+			return_watchdog = Integer.parseInt(connector.sendMessage(Messages.get_Watchdog));
+		} catch (Exception e) {
+			return_watchdog = -1;
+		}
+
+		return return_watchdog;
+
 	}
 
 	@Override
 	public boolean set_Watchdog(int watchdog) {
-		// TODO Auto-generated method stub
-		return false;
+		
+		boolean return_value = false;
+
+		try {
+
+			String result = connector.sendMessage(Messages.set_Watchdog + " " + watchdog);
+
+			switch (result.trim()) {
+			case "true":
+				return_value = true;
+				break;
+			case "false":
+				return_value = false;
+			default:
+				break;
+			}
+		} catch (Exception e) {
+			// nothing to do
+		}
+
+		return return_value;
 	}
 
 	@Override
@@ -760,22 +844,79 @@ public class EnergieAPI implements EnergieAPIInterface, EnergieCOMInterface {
 		return false;
 	}
 
+	@Deprecated
 	@Override
 	public boolean setShutterUp(int SA) {
-		// TODO Auto-generated method stub
-		return false;
+		boolean return_value = false;
+
+		try {
+			String result = connector.sendMessage(Messages.setShutterUp + " " + SA);
+
+			switch (result.trim()) {
+			case "true":
+				return_value = true;
+				break;
+			case "false":
+				return_value = false;
+			default:
+				break;
+			}
+		} catch (Exception e) {
+			// nothing to do
+		}
+
+		return return_value;
 	}
 
+	@Deprecated
 	@Override
 	public boolean setShutterDown(int SA) {
-		// TODO Auto-generated method stub
-		return false;
+		
+		boolean return_value = false;
+
+		try {
+
+			String result = connector.sendMessage(Messages.setShutterDown + " " + SA);
+
+			switch (result.trim()) {
+			case "true":
+				return_value = true;
+				break;
+			case "false":
+				return_value = false;
+			default:
+				break;
+			}
+		} catch (Exception e) {
+			// nothing to do
+		}
+
+		return return_value;
 	}
 
+	@Deprecated
 	@Override
 	public boolean setShutterStop(int SA) {
-		// TODO Auto-generated method stub
-		return false;
+		
+		boolean return_value = false;
+
+		try {
+			String result = connector.sendMessage(Messages.setShutterStop + " " + SA);
+
+			switch (result.trim()) {
+			case "true":
+				return_value = true;
+				break;
+			case "false":
+				return_value = false;
+			default:
+				break;
+			}
+		} catch (Exception e) {
+			// nothing to do
+		}
+
+		return return_value;
 	}
 
 	@Override
@@ -816,20 +957,46 @@ public class EnergieAPI implements EnergieAPIInterface, EnergieCOMInterface {
 
 	@Override
 	public int get_HVAC_input_TOR1(int SA) {
-		// TODO Auto-generated method stub
-		return 0;
+		
+		int response = -1;
+
+		try {
+			response = Integer.parseInt(connector.sendMessage(Messages.get_HVAC_input_TOR1 + " " + Integer.toString(SA)));
+		} catch (Exception e) {
+			response = -1;
+		}
+
+		return response;
+
 	}
 
 	@Override
 	public int get_HVAC_input_TOR2(int SA) {
-		// TODO Auto-generated method stub
-		return 0;
+		
+		int response = -1;
+
+		try {
+			response = Integer.parseInt(connector.sendMessage(Messages.get_HVAC_input_TOR2 + " " + Integer.toString(SA)));
+		} catch (Exception e) {
+			response = -1;
+		}
+
+		return response;
+
 	}
 
 	@Override
 	public int get_HVAC_input_0_10V(int SA) {
-		// TODO Auto-generated method stub
-		return 0;
+		
+		int response = -1;
+
+		try {
+			response = Integer.parseInt(connector.sendMessage(Messages.get_HVAC_input_0_10V + " " + Integer.toString(SA)));
+		} catch (Exception e) {
+			response = -1;
+		}
+
+		return response;
 	}
 
 	@Override
@@ -1200,26 +1367,84 @@ public class EnergieAPI implements EnergieAPIInterface, EnergieCOMInterface {
 
 	@Override
 	public boolean set_HVAC_output_valve1_PWM(int SA, int percentage) {
-		// TODO Auto-generated method stub
-		return false;
+	boolean return_value = false;
+		
+		String result = connector.sendMessage(Messages.set_HVAC_output_valve1_PWM + " " + Integer.toString(SA) + " " + Integer.toString(percentage));
+		
+		switch (result.trim()) {
+			case "true":
+				return_value = true;
+				break;
+			case "false":
+				return_value = false;
+			default:
+				break;
+		}	
+		
+		return return_value;
+	
 	}
 
 	@Override
 	public boolean set_HVAC_output_valve2_PWM(int SA, int percentage) {
-		// TODO Auto-generated method stub
-		return false;
+	
+		boolean return_value = false;
+		
+		String result = connector.sendMessage(Messages.set_HVAC_output_valve2_PWM + " " + Integer.toString(SA) + " " + Integer.toString(percentage));
+		
+		switch (result.trim()) {
+			case "true":
+				return_value = true;
+				break;
+			case "false":
+				return_value = false;
+			default:
+				break;
+		}	
+		
+		return return_value;
+	
 	}
 
 	@Override
 	public boolean set_HVAC_output_valve1_0_10V(int SA, int percentage) {
-		// TODO Auto-generated method stub
-		return false;
+		boolean return_value = false;
+		
+		String result = connector.sendMessage(Messages.set_HVAC_output_valve1_0_10V + " " + Integer.toString(SA) + " " + Integer.toString(percentage));
+		
+		switch (result.trim()) {
+			case "true":
+				return_value = true;
+				break;
+			case "false":
+				return_value = false;
+			default:
+				break;
+		}	
+		
+		return return_value;
+	
 	}
 
 	@Override
 	public boolean set_HVAC_output_valve2_0_10V(int SA, int percentage) {
-		// TODO Auto-generated method stub
-		return false;
+		
+		boolean return_value = false;
+		
+		String result = connector.sendMessage(Messages.set_HVAC_output_valve2_0_10V + " " + Integer.toString(SA) + " " + Integer.toString(percentage));
+		
+		switch (result.trim()) {
+			case "true":
+				return_value = true;
+				break;
+			case "false":
+				return_value = false;
+			default:
+				break;
+		}	
+		
+		return return_value;
+	
 	}
 
 	@Override
@@ -1230,8 +1455,21 @@ public class EnergieAPI implements EnergieAPIInterface, EnergieCOMInterface {
 
 	@Override
 	public boolean set_HVAC_group_auto(int group, boolean value) {
-		// TODO Auto-generated method stub
-		return false;
+boolean return_value = false;
+		
+		String result = connector.sendMessage(Messages.set_HVAC_group_auto + " " + Integer.toString(group) + " " + Boolean.toString(value));
+		
+		switch (result.trim()) {
+			case "true":
+				return_value = true;
+				break;
+			case "false":
+				return_value = false;
+			default:
+				break;
+		}	
+		
+		return return_value;
 	}
 
 	@Override
@@ -1350,8 +1588,22 @@ public class EnergieAPI implements EnergieAPIInterface, EnergieCOMInterface {
 
 	@Override
 	public boolean set_HVAC_parameters_temperature_target(int group, int value) {
-		// TODO Auto-generated method stub
-		return false;
+		
+		boolean return_value = false;
+		
+		String result = connector.sendMessage(Messages.set_HVAC_parameters_temperature_target + " " + Integer.toString(group) + " " + Integer.toString(value));
+		
+		switch (result.trim()) {
+			case "true":
+				return_value = true;
+				break;
+			case "false":
+				return_value = false;
+			default:
+				break;
+		}	
+		
+		return return_value;
 	}
 
 	@Override
@@ -1528,16 +1780,46 @@ public class EnergieAPI implements EnergieAPIInterface, EnergieCOMInterface {
 		return false;
 	}
 
+	@Deprecated
 	@Override
 	public boolean set_HVAC_temp_target(int group, int value) {
-		// TODO Auto-generated method stub
-		return false;
+		
+		boolean return_value = false;
+		
+		String result = connector.sendMessage(Messages.set_HVAC_temp_target + " " + Integer.toString(group) + " " + Integer.toString(value));
+		
+		switch (result.trim()) {
+			case "true":
+				return_value = true;
+				break;
+			case "false":
+				return_value = false;
+			default:
+				break;
+		}	
+		
+		return return_value;
 	}
-
+	
+	@Deprecated
 	@Override
 	public boolean set_HVAC_auto(int group, int value) {
-		// TODO Auto-generated method stub
-		return false;
+		
+		boolean return_value = false;
+		
+		String result = connector.sendMessage(Messages.set_HVAC_auto + " " + Integer.toString(group) + " " + Integer.toString(value));
+		
+		switch (result.trim()) {
+			case "true":
+				return_value = true;
+				break;
+			case "false":
+				return_value = false;
+			default:
+				break;
+		}	
+		
+		return return_value;
 	}
 
 	@Override
@@ -1734,26 +2016,58 @@ public class EnergieAPI implements EnergieAPIInterface, EnergieCOMInterface {
 
 	@Override
 	public boolean set_data1(int data1) {
-		// TODO Auto-generated method stub
-		return false;
+		
+		boolean return_value = false;
+
+		String result = connector.sendMessage(Messages.set_Data_1 + " " + Integer.toString(data1));
+			
+		switch (result.trim()) {
+			case "true":
+				return_value = true;
+				break;
+			case "false":
+				return_value = false;
+			default:
+				break;
+		}
+			
+		return return_value;
 	}
 
 	@Override
 	public boolean set_data2(int data2) {
-		// TODO Auto-generated method stub
-		return false;
+		
+		boolean return_value = false;
+
+		String result = connector.sendMessage(Messages.set_Data_2 + " " + Integer.toString(data2));
+			
+		switch (result.trim()) {
+			case "true":
+				return_value = true;
+				break;
+			case "false":
+				return_value = false;
+			default:
+				break;
+		}
+			
+		return return_value;
+
 	}
 
+	@Deprecated
 	@Override
 	public boolean setData1(int data1) {
-		// TODO Auto-generated method stub
-		return false;
+		
+		return set_data1(data1);
+		
 	}
 
+	@Deprecated
 	@Override
 	public boolean setData2(int data2) {
-		// TODO Auto-generated method stub
-		return false;
+		
+		return set_data2(data2);
 	}
 	
 	
