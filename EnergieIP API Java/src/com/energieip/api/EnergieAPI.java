@@ -7,6 +7,13 @@ import java.io.InputStreamReader;
 import java.net.Socket;
 import java.net.UnknownHostException;
 
+/**
+ * ENERGIEIP JAVA API 
+ * @author stephane@energie-ip.com
+ *
+ * this class implements the EnergieAPIInterface definition.
+ *
+ */
 public class EnergieAPI implements EnergieAPIInterface {
 
 	private Socket socket;
