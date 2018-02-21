@@ -1,5 +1,6 @@
 package com.energieip.api;
 
+import com.energieip.api.connector.CoreConnector;
 import com.energieip.api.interfaces.EnergieAPIInterface;
 import com.energieip.api.interfaces.EnergieCOMInterface;
 
@@ -13,8 +14,19 @@ import com.energieip.api.interfaces.EnergieCOMInterface;
 public class EnergieAPI implements EnergieAPIInterface, EnergieCOMInterface {
 	
 	
+	private CoreConnector connector;
+	
 	/**
-	 * Return List from String
+	 * default constructor
+	 */
+	public EnergieAPI() {
+		// define a new connector
+		connector = new CoreConnector();
+	}
+	
+	
+	/**
+	 * Return List from String (utilities)
 	 * 
 	 * @param return_list
 	 * @return String[]

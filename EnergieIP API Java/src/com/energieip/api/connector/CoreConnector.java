@@ -26,7 +26,7 @@ public class CoreConnector {
 	 * @param message
 	 * @return
 	 */
-	private String sendMessage(String message) {
+	public String sendMessage(String message) {
 
 		String message_from_server = "";
 
