@@ -75,7 +75,7 @@ public class EnergieAPI implements EnergieAPIInterface, EnergieCOMInterface {
 		int return_rack_id = -1;
 
 		try {
-			return_rack_id = Integer.parseInt(connector.sendMessage(Messages.getRackID));
+			return_rack_id = Integer.parseInt(connector.sendMessage(Messages.get_RackID));
 		} catch (Exception e) {
 			return_rack_id = -1;
 		}
@@ -88,24 +88,89 @@ public class EnergieAPI implements EnergieAPIInterface, EnergieCOMInterface {
 		// TODO Auto-generated method stub
 		return false;
 	}
-
+	
+	/*
+	 * (non-Javadoc)
+	 * @see com.energieip.api.interfaces.EnergieAPIInterface#scan_withErase()
+	 */
 	@Override
 	public boolean scan_withErase() {
-		// TODO Auto-generated method stub
-		return false;
-	}
+		
+		boolean return_value = false;
 
+		try {
+
+			String result = connector.sendMessage(Messages.scan_WithErase);
+
+			switch (result.trim()) {
+			case "true":
+				return_value = true;
+				break;
+			case "false":
+				return_value = false;
+			default:
+				break;
+			}
+		} catch (Exception e) {
+			// nothing to do
+		}
+
+		return return_value;
+	}
+	
+	/*
+	 * (non-Javadoc)
+	 * @see com.energieip.api.interfaces.EnergieAPIInterface#scan_withoutErase()
+	 */
 	@Override
 	public boolean scan_withoutErase() {
-		// TODO Auto-generated method stub
-		return false;
+		
+		boolean return_value = false;
+
+		try {
+
+			String result = connector.sendMessage(Messages.scan_WithoutErase);
+
+			switch (result.trim()) {
+			case "true":
+				return_value = true;
+				break;
+			case "false":
+				return_value = false;
+			default:
+				break;
+			}
+		} catch (Exception e) {
+			// nothing to do
+		}
+
+		return return_value;
 	}
 
 	@Override
 	public boolean set_group(int SA, int target_group) {
-		// TODO Auto-generated method stub
-		return false;
+		
+		boolean return_value = false;
+
+		try {
+			String result = connector.sendMessage(Messages.set_driver_group + " " + SA + " " + target_group);
+
+			switch (result.trim()) {
+			case "true":
+				return_value = true;
+				break;
+			case "false":
+				return_value = false;
+			default:
+				break;
+			}
+		} catch (Exception e) {
+			// nothing to do
+		}
+
+		return return_value;
 	}
+	
 
 	@Override
 	public int get_group(int SA) {
