@@ -15,7 +15,13 @@ import java.net.UnknownHostException;
  *
  */
 public class EnergieAPI implements EnergieAPIInterface {
-
+	
+	// TODO
+	// 1) sortir la communication de la classe principale 
+	// 2) mettre en place un systeme de niveau (user-maintener-developer)
+	// 3) implementer les methodes manquante
+	// 4) implementer la CLI dans un projet à part
+	
 	private Socket socket;
 
 	@SuppressWarnings("unused")
