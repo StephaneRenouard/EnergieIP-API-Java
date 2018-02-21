@@ -1,6 +1,7 @@
 package com.energieip.api;
 
 import com.energieip.api.connector.CoreConnector;
+import com.energieip.api.connector.Messages;
 import com.energieip.api.interfaces.EnergieAPIInterface;
 import com.energieip.api.interfaces.EnergieCOMInterface;
 
@@ -46,7 +47,8 @@ public class EnergieAPI implements EnergieAPIInterface, EnergieCOMInterface {
 	 */
 	@Override
 	public void set_TCPserver_IP(String tcpServer_IP) {
-		// TODO Auto-generated method stub
+		
+		Parameters.CORE_IP = tcpServer_IP;
 		
 	}
 
@@ -56,7 +58,8 @@ public class EnergieAPI implements EnergieAPIInterface, EnergieCOMInterface {
 	 */
 	@Override
 	public void set_TCPserver_PORT(int tcpServer_PORT) {
-		// TODO Auto-generated method stub
+		
+		Parameters.CORE_PORT = tcpServer_PORT;
 		
 	}
 
@@ -68,8 +71,16 @@ public class EnergieAPI implements EnergieAPIInterface, EnergieCOMInterface {
 	 */
 	@Override
 	public int get_rackID() {
-		// TODO Auto-generated method stub
-		return 0;
+		
+		int return_rack_id = -1;
+
+		try {
+			return_rack_id = Integer.parseInt(connector.sendMessage(Messages.getRackID));
+		} catch (Exception e) {
+			return_rack_id = -1;
+		}
+
+		return return_rack_id;
 	}
 
 	@Override
