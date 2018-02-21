@@ -1,4 +1,4 @@
-package com.energieip.api;
+package com.energieip.api.interfaces;
 
 public interface EnergieCOMInterface {
 	
