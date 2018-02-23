@@ -18,6 +18,14 @@ public class CoreConnector {
 	
 	private Socket socket;
 	
+	/**
+	 * Default constructor
+	 */
+	public CoreConnector() {
+		// TODO Auto-generated constructor stu
+	}	
+	
+	
 	
 	/**
 	 * Send TCP message and wait for response

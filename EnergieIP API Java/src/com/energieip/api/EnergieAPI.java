@@ -22,17 +22,9 @@ public class EnergieAPI implements EnergieAPIInterface, EnergieCOMInterface {
 	 */
 	public EnergieAPI() {
 		
-		// TODO
-		// DO NOT CONNECT at start, 
-		// add a method for testing connection
-		// allow a stateless mode (default) and always connected mode (timeout)
-		// allow a user ID and code
-		
-		// TODO
-		// should be better for CLI client
-		
 		// define a new connector
 		connector = new CoreConnector();
+		
 	}
 	
 	
@@ -56,10 +48,9 @@ public class EnergieAPI implements EnergieAPIInterface, EnergieCOMInterface {
 	 * @see com.energieip.api.EnergieCOMInterface#set_TCPserver_IP(java.lang.String)
 	 */
 	@Override
-	public void set_TCPserver_IP(String tcpServer_IP) {
-		
+	public boolean set_TCPserver_IP(String tcpServer_IP) {		
 		Parameters.CORE_IP = tcpServer_IP;
-		
+		return true;
 	}
 
 	/* COM Interface
@@ -67,11 +58,48 @@ public class EnergieAPI implements EnergieAPIInterface, EnergieCOMInterface {
 	 * @see com.energieip.api.EnergieCOMInterface#set_TCPserver_PORT(int)
 	 */
 	@Override
-	public void set_TCPserver_PORT(int tcpServer_PORT) {
-		
-		Parameters.CORE_PORT = tcpServer_PORT;
-		
+	public boolean set_TCPserver_PORT(int tcpServer_PORT) {
+		Parameters.CORE_PORT = tcpServer_PORT;		
+		return true;
 	}
+	
+
+	@Override
+	public boolean connect(String username, String password, String mode) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+
+	@Override
+	public boolean get_connectionStatus() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+
+	@Override
+	public boolean set_connectionStatus(boolean connectionStatus) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+
+	@Override
+	public boolean disconnect() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+	
+	@Override
+	public boolean get_testConnection() {
+		
+		return false;
+	}
+	
+	
+
+
 
 	// ------------------------------------------------------------------------------------------------------------------------
 	
@@ -2079,9 +2107,9 @@ boolean return_value = false;
 		
 		return set_data2(data2);
 	}
-	
-	
 
+
+	
 
 
 }
