@@ -64,11 +64,31 @@ public class CoreConnector {
  * @return
  */
 	public boolean test_Connection() {
-		String result = sendMessage(Messages.test);
+		return String2Boolean(sendMessage(Messages.test));
 		
-		System.out.println("result=" + result);
+	}
+	
+	
+	/**
+	 * String to boolean 
+	 * @param string
+	 * @return boolean
+	 */
+	private boolean String2Boolean(String string){
 		
-		return false;
+		Boolean result = false;
+		string = string.trim();
+		
+		if(string.matches("true")){
+			result = true;
+		}else if(string.matches("false")) {
+			result = false;
+		}else{
+			System.err.println("[Coreconnector] bad syntax");
+		}
+		
+		return result;
+		
 	}
 	
 	
