@@ -59,13 +59,12 @@ public class CoreConnector {
 	}
 	
 	
-/**
- * Test connection status with login/password
- * @return
- */
+	/**
+	 * Test connection status with login/password
+	 * @return
+	 */
 	public boolean test_Connection() {
 		return String2Boolean(sendMessage(Messages.test));
-		
 	}
 	
 	
