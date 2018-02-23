@@ -21,6 +21,16 @@ public class EnergieAPI implements EnergieAPIInterface, EnergieCOMInterface {
 	 * default constructor
 	 */
 	public EnergieAPI() {
+		
+		// TODO
+		// DO NOT CONNECT at start, 
+		// add a method for testing connection
+		// allow a stateless mode (default) and always connected mode (timeout)
+		// allow a user ID and code
+		
+		// TODO
+		// should be better for CLI client
+		
 		// define a new connector
 		connector = new CoreConnector();
 	}
