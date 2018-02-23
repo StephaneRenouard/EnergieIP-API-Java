@@ -14,6 +14,8 @@ public class TestCommands {
 		System.out.println("TEST ENERGIE API");
 
 		EnergieAPI energieAPI = new EnergieAPI();
+		
+		energieAPI.connect("stef", "stef", 0);
 
 		/*
 		 * try { energieAPI.connect(); } catch (UnknownHostException e) { //

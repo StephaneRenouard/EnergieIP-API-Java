@@ -9,8 +9,9 @@ public interface EnergieCOMInterface {
 	
 	boolean set_TCPserver_IP(String tcpServer_IP);
 	boolean set_TCPserver_PORT(int tcpServer_PORT);
-	
-	boolean connect(String username, String password, String mode);
+
+	boolean connect(String username, String password);
+	boolean connect(String username, String password, int mode);
 	
 	boolean get_connectionStatus();
 	boolean set_connectionStatus(boolean connectionStatus);

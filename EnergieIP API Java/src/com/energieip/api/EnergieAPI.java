@@ -63,38 +63,43 @@ public class EnergieAPI implements EnergieAPIInterface, EnergieCOMInterface {
 		return true;
 	}
 	
-
 	@Override
-	public boolean connect(String username, String password, String mode) {
-		// TODO Auto-generated method stub
-		return false;
+	public boolean connect(String username, String password) {		
+		return connector.connect(username, password, 0); // 0 (stateless)
+	}
+	
+	@Override
+	public boolean connect(String username, String password, int mode) {		
+		return connector.connect(username, password, mode);
 	}
 
 
 	@Override
 	public boolean get_connectionStatus() {
-		// TODO Auto-generated method stub
-		return false;
+		return connector.connectionStatus;
 	}
 
 
 	@Override
 	public boolean set_connectionStatus(boolean connectionStatus) {
-		// TODO Auto-generated method stub
-		return false;
+		if(connectionStatus==false){
+			Parameters.CONNECTION_MODE=0;
+		}
+		else {
+			Parameters.CONNECTION_MODE=1;
+		}
+		return true;
 	}
 
 
 	@Override
 	public boolean disconnect() {
-		// TODO Auto-generated method stub
-		return false;
+		return set_connectionStatus(false);
 	}
 	
 	@Override
 	public boolean get_testConnection() {
-		
-		return false;
+		return connector.test_Connection();
 	}
 	
 	

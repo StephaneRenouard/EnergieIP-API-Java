@@ -7,6 +7,7 @@ import java.io.InputStreamReader;
 import java.net.Socket;
 import java.net.UnknownHostException;
 
+
 import com.energieip.api.Parameters;
 
 /**
@@ -18,12 +19,58 @@ public class CoreConnector {
 	
 	private Socket socket;
 	
+	public boolean connectionStatus = false; // default connection status
+	
+	boolean DEBUG = true; 
+	
 	/**
 	 * Default constructor
 	 */
 	public CoreConnector() {
-		// TODO Auto-generated constructor stu
+		// TODO Auto-generated constructor
 	}	
+	
+
+	public boolean connect(String username, String password, int mode) {
+		
+		boolean status = false;
+		
+		Parameters.USERNAME = username;
+		Parameters.PASSWORD = password;
+		Parameters.CONNECTION_MODE = mode;
+		status = true;
+		
+		if(Parameters.CONNECTION_MODE==1){ // persistant
+			
+			try {
+				socket = null;
+				socket = new Socket(Parameters.CORE_IP, Parameters.CORE_PORT);
+				connectionStatus = true;
+			} catch (UnknownHostException e) {
+				status = false;
+				e.printStackTrace();
+			} catch (IOException e) {
+				status = false;
+				e.printStackTrace();
+			}
+		}
+		
+		return status;
+	}
+	
+	
+/**
+ * Test connection status with login/password
+ * @return
+ */
+	public boolean test_Connection() {
+		String result = sendMessage("test");
+		
+		System.out.println("result=" + result);
+		
+		return false;
+	}
+	
 	
 	
 	
@@ -38,33 +85,41 @@ public class CoreConnector {
 		String message_from_server = "";
 
 		try {
-
-			socket = null;
-			socket = new Socket(Parameters.CORE_IP, Parameters.CORE_PORT);
-			// socket = connect();
-
+			
+			if(Parameters.CONNECTION_MODE!=1){
+				socket = null;
+				socket = new Socket(Parameters.CORE_IP, Parameters.CORE_PORT);
+			}
+			
 			DataOutputStream outToServer = new DataOutputStream(socket.getOutputStream());
 
 			message = "1234567" + message + "\n";
-			System.out.println("Sending: " + message);
+			
+			if(DEBUG){
+				System.out.println("Sending: " + message);
+			}
 			outToServer.writeBytes(message);
-
-			System.out.println("Waiting for response...");
-
+			
+			if(DEBUG){
+				System.out.println("Waiting for response...");
+			}
+			
 			BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 			
 			/*
 			 * while ((inputLine = in.readLine()) != null) { message_from_server
 			 * += inputLine; }
 			 */
-
 			message_from_server = in.readLine();
-
-			System.out.println("From Server: " + message_from_server);
-
-			// disconnect(socket);
-			socket.close();
-
+			
+			if(DEBUG){
+				System.out.println("From Server: " + message_from_server);
+			}
+			
+			if(Parameters.CONNECTION_MODE!=1){
+				socket.close();
+			}
+					
 		} catch (UnknownHostException e) {
 			// e.printStackTrace();
 			System.err.println("ERROR: TCP Client UnknownHostException");
@@ -77,5 +132,10 @@ public class CoreConnector {
 
 		return message_from_server;
 	}
+
+
+
+
+
 
 }
