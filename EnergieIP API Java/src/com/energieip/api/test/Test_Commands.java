@@ -3,13 +3,13 @@ package com.energieip.api.test;
 import com.energieip.api.EnergieAPI;
 
 
-public class TestCommands {
+public class Test_Commands {
 
 	public static void main(String[] args) {
-		new TestCommands();
+		new Test_Commands();
 	}
 
-	public TestCommands() {
+	public Test_Commands() {
 
 		System.out.println("TEST ENERGIE API");
 
