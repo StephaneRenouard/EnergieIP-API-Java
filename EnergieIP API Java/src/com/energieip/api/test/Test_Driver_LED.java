@@ -24,9 +24,12 @@ public class Test_Driver_LED {
 			 System.out.println(list_light[i]);
 		 }
 		 
-		 System.out.println(energieAPI.get_LED_percentage(12));
 		 
-		// System.out.println(energieAPI.set_LED_per
+		 int SA = 12;
+		 
+		 System.out.println(energieAPI.get_LED_percentage(SA));
+		 
+		 System.out.println(energieAPI.set_LED_percentage(SA, 50));
 		 
 		
 				
