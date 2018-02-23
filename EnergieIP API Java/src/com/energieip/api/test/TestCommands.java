@@ -78,9 +78,9 @@ public class TestCommands {
 
 		// energieAPI.setShutterUp(406);
 	 
-		energieAPI.set_HVAC_auto(1, 0); // group 1,       0 = false
+		//energieAPI.set_HVAC_auto(1, 0); // group 1,       0 = false
 		
-		energieAPI.set_HVAC_output_valve2_0_10V(24, 50);
+		//energieAPI.set_HVAC_output_valve2_0_10V(24, 50);
 		
 		
 		
