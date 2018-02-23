@@ -97,10 +97,10 @@ public interface EnergieAPIInterface {
 	int get_LED_group_start_Threshold(int group);
 		
 	// GET from ID100-STATUS
-	int get_LED_group_temperature();
-	int get_LED_group_temperature_corrected();
-	int get_LED_group_lux();
-	int get_LED_group_lux_corrected();
+	int get_LED_group_temperature(int group);
+	int get_LED_group_temperature_corrected(int group);
+	int get_LED_group_lux(int group);
+	int get_LED_group_lux_corrected(int group);
 	int get_LED_group_occupency_time_505(int group);
 	int get_LED_group_sensorAdress(int group);
 	
