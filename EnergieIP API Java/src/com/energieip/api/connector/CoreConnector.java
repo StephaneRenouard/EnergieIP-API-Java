@@ -9,6 +9,7 @@ import java.net.UnknownHostException;
 
 
 import com.energieip.api.Parameters;
+import com.energieip.api.tools.Tools;
 
 /**
  * This class implements the connection mecanism to CORE
@@ -64,32 +65,11 @@ public class CoreConnector {
 	 * @return
 	 */
 	public boolean test_Connection() {
-		return String2Boolean(sendMessage(Messages.test));
+		return Tools.String2Boolean(sendMessage(Messages.test));
 	}
 	
 	
-	/**
-	 * String to boolean 
-	 * @param string
-	 * @return boolean
-	 */
-	private boolean String2Boolean(String string){
-		
-		Boolean result = false;
-		string = string.trim();
-		
-		if(string.contains("true")){
-			result = true;
-		}else if(string.contains("false")) {
-			result = false;
-		}else{
-			System.err.println("[Coreconnector - String2Boolean] content is: " + string);
-			System.err.println("[Coreconnector - String2Boolean] bad syntax");
-		}
-		
-		return result;
-		
-	}
+
 	
 	
 	

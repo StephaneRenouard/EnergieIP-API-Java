@@ -4,6 +4,7 @@ import com.energieip.api.connector.CoreConnector;
 import com.energieip.api.connector.Messages;
 import com.energieip.api.interfaces.EnergieAPIInterface;
 import com.energieip.api.interfaces.EnergieCOMInterface;
+import com.energieip.api.tools.Tools;
 
 /**
  * ENERGIEIP JAVA API 
@@ -104,8 +105,6 @@ public class EnergieAPI implements EnergieAPIInterface, EnergieCOMInterface {
 	
 	
 
-
-
 	// ------------------------------------------------------------------------------------------------------------------------
 	
 	/* EnergieAPI Interface
@@ -115,21 +114,17 @@ public class EnergieAPI implements EnergieAPIInterface, EnergieCOMInterface {
 	@Override
 	public int get_rackID() {
 		
-		int return_rack_id = -1;
-
-		try {
-			return_rack_id = Integer.parseInt(connector.sendMessage(Messages.get_RackID));
-		} catch (Exception e) {
-			return_rack_id = -1;
-		}
-
+		int return_rack_id = -1; // error code
+		return_rack_id = Tools.String2int((connector.sendMessage(Messages.get_RackID)));
+		
 		return return_rack_id;
 	}
 
 	@Override
-	public boolean set_rackID() {
-		// TODO Auto-generated method stub
-		return false;
+	public boolean set_rackID(int value) {
+		
+		String result = connector.sendMessage(Messages.set_RackID + " " + value);
+		return  Tools.String2Boolean(result);
 	}
 	
 	/*
@@ -642,25 +637,25 @@ public class EnergieAPI implements EnergieAPIInterface, EnergieCOMInterface {
 	}
 
 	@Override
-	public boolean set_LED_Imax(int SA) {
+	public boolean set_LED_Imax(int SA, int value) {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
-	public boolean set_LED_percentage(int SA) {
+	public boolean set_LED_percentage(int SA, int percentage) {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
-	public boolean set_LED_start_time(int SA) {
+	public boolean set_LED_start_time(int SA, int value) {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
-	public boolean set_LED_stop_time(int SA) {
+	public boolean set_LED_stop_time(int SA, int value) {
 		// TODO Auto-generated method stub
 		return false;
 	}
@@ -684,89 +679,96 @@ public class EnergieAPI implements EnergieAPIInterface, EnergieCOMInterface {
 	}
 
 	@Override
-	public boolean set_LED_group_auto(int group) {
+	public boolean set_LED_group_auto(int group, int value) {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
-	public boolean set_LED_group_application(int group) {
+	public boolean set_LED_group_application(int group, int value) {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
-	public boolean set_LED_group_watchdog(int group) {
+	public boolean set_LED_group_watchdog(int group, int value) {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
-	public boolean set_LED_group_lux_target(int group) {
+	public boolean set_LED_group_lux_target(int group, int value) {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
-	public boolean set_LED_group_correction_interval(int group) {
+	public boolean set_LED_group_correction_interval(int group, int value) {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
-	public boolean set_LED_group_occupency_time(int group) {
+	public boolean set_LED_group_occupency_time(int group, int value) {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
-	public boolean set_LED_group_night_threshold(int group) {
+	public boolean set_LED_group_night_threshold(int group, int value) {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
-	public boolean set_LED_group_followMe_previous(int group) {
+	public boolean set_LED_group_followMe_previous(int group, int value) {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
-	public boolean set_LED_group_followMe_next(int group) {
+	public boolean set_LED_group_followMe_next(int group, int value) {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
-	public boolean set_LED_group_ramping_up(int group) {
+	public boolean set_LED_group_ramping_up(int group, int value) {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
-	public boolean set_LED_group_ramping_down(int group) {
+	public boolean set_LED_group_ramping_down(int group, int value) {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
-	public boolean set_LED_group_lux_correctionFactor_night(int group) {
+	public boolean set_LED_group_lux_correctionFactor_night(int group, int value) {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
-	public boolean set_LED_group_lux_correctionFactor_day(int group) {
+	public boolean set_LED_group_lux_correctionFactor_day(int group, int value) {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
-	public boolean set_LED_group_start_Threshold(int group) {
+	public boolean set_LED_group_start_Threshold(int group, int value) {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
+	
+	
+	/*
+	 * BLIND
+	 * @see com.energieip.api.interfaces.EnergieAPIInterface#get_BLIND_1_state(int)
+	 */
+	
 	@Override
 	public int get_BLIND_1_state(int SA) {
 		// TODO Auto-generated method stub

@@ -9,7 +9,7 @@ public interface EnergieAPIInterface {
 	 */
 	// rack
 	int get_rackID();
-	boolean set_rackID();
+	boolean set_rackID(int value);
 	
 	// scan
 	boolean scan_withErase();
@@ -106,10 +106,10 @@ public interface EnergieAPIInterface {
 	
 	
 	// SET from ID11
-	boolean set_LED_Imax(int SA);   // mA
-	boolean set_LED_percentage(int SA); // %
-	boolean set_LED_start_time(int SA); // sec
-	boolean set_LED_stop_time(int SA); // sec
+	boolean set_LED_Imax(int SA, int value);   // mA
+	boolean set_LED_percentage(int SA, int percentage); // %
+	boolean set_LED_start_time(int SA, int value); // sec
+	boolean set_LED_stop_time(int SA, int value); // sec
 	
 	// SET from ID2
 	boolean set_LED_group(int SA, int group);
@@ -120,22 +120,22 @@ public interface EnergieAPIInterface {
 	boolean setIndividualLightPercentage(int SA, int percentage);
 	
 	// SET from ID100-MODES
-	boolean set_LED_group_auto(int group);
-	boolean set_LED_group_application(int group);
-	boolean set_LED_group_watchdog(int group);
+	boolean set_LED_group_auto(int group, int value);
+	boolean set_LED_group_application(int group, int value);
+	boolean set_LED_group_watchdog(int group, int value);
 	
 	// SET from ID100-LIGHT
-	boolean set_LED_group_lux_target(int group);
-	boolean set_LED_group_correction_interval(int group);
-	boolean set_LED_group_occupency_time(int group);
-	boolean set_LED_group_night_threshold(int group);
-	boolean set_LED_group_followMe_previous(int group);
-	boolean set_LED_group_followMe_next(int group);
-	boolean set_LED_group_ramping_up(int group);
-	boolean set_LED_group_ramping_down(int group);
-	boolean set_LED_group_lux_correctionFactor_night(int group);
-	boolean set_LED_group_lux_correctionFactor_day(int group);
-	boolean set_LED_group_start_Threshold(int group);
+	boolean set_LED_group_lux_target(int group, int value);
+	boolean set_LED_group_correction_interval(int group, int value);
+	boolean set_LED_group_occupency_time(int group, int value);
+	boolean set_LED_group_night_threshold(int group, int value);
+	boolean set_LED_group_followMe_previous(int group, int value);
+	boolean set_LED_group_followMe_next(int group, int value);
+	boolean set_LED_group_ramping_up(int group, int value);
+	boolean set_LED_group_ramping_down(int group, int value);
+	boolean set_LED_group_lux_correctionFactor_night(int group, int value);
+	boolean set_LED_group_lux_correctionFactor_day(int group, int value);
+	boolean set_LED_group_start_Threshold(int group, int value);
 
 	
 	
