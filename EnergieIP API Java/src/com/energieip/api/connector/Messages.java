@@ -61,6 +61,10 @@ public class Messages {
 	static final public String set_Data_2 = "set_Data_2";
 	
 	
+	// Connection test
+	static final public String test = "test";
+	
+	
 	
 	// ------------------------------------------------------------------------------------------------------------------------	
 	/*

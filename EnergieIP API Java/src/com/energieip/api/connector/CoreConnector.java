@@ -64,7 +64,7 @@ public class CoreConnector {
  * @return
  */
 	public boolean test_Connection() {
-		String result = sendMessage("test");
+		String result = sendMessage(Messages.test);
 		
 		System.out.println("result=" + result);
 		
