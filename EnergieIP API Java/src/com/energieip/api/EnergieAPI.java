@@ -113,7 +113,6 @@ public class EnergieAPI implements EnergieAPIInterface, EnergieCOMInterface {
 	 */
 	@Override
 	public int get_rackID() {
-		
 		int return_rack_id = -1; // error code
 		return_rack_id = Tools.String2int((connector.sendMessage(Messages.get_RackID)));
 		return return_rack_id;
@@ -209,9 +208,9 @@ public class EnergieAPI implements EnergieAPIInterface, EnergieCOMInterface {
 	
 
 	@Override
-	public int get_group(int SA) {
-		// TODO Auto-generated method stub
-		return 0;
+	public int get_group(int SA) {		
+		String result = connector.sendMessage(Messages.get_DRIVER_group + " " + SA);
+		return Tools.String2int(result);
 	}
 
 	@Override
@@ -414,350 +413,352 @@ public class EnergieAPI implements EnergieAPIInterface, EnergieCOMInterface {
 
 	@Override
 	public int get_LED_Imax(int SA) {
-		// TODO Auto-generated method stub
-		return 0;
+		String result = connector.sendMessage(Messages.get_LED_Imax + " " + SA);
+		return Tools.String2int(result);
 	}
 
 	@Override
 	public int get_LED_percentage(int SA) {
-		// TODO Auto-generated method stub
-		return 0;
+		String result = connector.sendMessage(Messages.get_LED_percentage + " " + SA);
+		return Tools.String2int(result);
 	}
 
 	@Override
 	public int get_LED_start_time(int SA) {
-		// TODO Auto-generated method stub
-		return 0;
+		String result = connector.sendMessage(Messages.get_LED_start_time + " " + SA);
+		return Tools.String2int(result);
 	}
 
 	@Override
 	public int get_LED_stop_time(int SA) {
-		// TODO Auto-generated method stub
-		return 0;
+		String result = connector.sendMessage(Messages.get_LED_stop_time + " " + SA);
+		return Tools.String2int(result);
 	}
 
 	@Override
 	public int get_LED_lux_corrected(int SA) {
-		// TODO Auto-generated method stub
-		return 0;
+		String result = connector.sendMessage(Messages.get_LED_lux_corrected + " " + SA);
+		return Tools.String2int(result);
+
 	}
 
 	@Override
 	public int get_LED_lux(int SA) {
-		// TODO Auto-generated method stub
-		return 0;
+		String result = connector.sendMessage(Messages.get_LED_lux + " " + SA);
+		return Tools.String2int(result);
 	}
 
 	@Override
 	public int get_LED_temperature(int SA) {
-		// TODO Auto-generated method stub
-		return 0;
+		String result = connector.sendMessage(Messages.get_LED_temperature + " " + SA);
+		return Tools.String2int(result);		
 	}
 
 	@Override
 	public int get_LED_movement(int SA) {
-		// TODO Auto-generated method stub
-		return 0;
+		String result = connector.sendMessage(Messages.get_LED_movement + " " + SA);
+		return Tools.String2int(result);
 	}
 
 	@Override
 	public int get_LED_power(int SA) {
-		// TODO Auto-generated method stub
-		return 0;
+		String result = connector.sendMessage(Messages.get_LED_power + " " + SA);
+		return Tools.String2int(result);
 	}
 
 	@Override
 	public int get_LED_version(int SA) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
+		String result = connector.sendMessage(Messages.get_LED_version + " " + SA);
+		return Tools.String2int(result);
+}
 
 	@Override
 	public int get_LED_error(int SA) {
-		// TODO Auto-generated method stub
-		return 0;
+		String result = connector.sendMessage(Messages.get_LED_error + " " + SA);
+		return Tools.String2int(result);
 	}
 
 	@Override
 	public int get_LED_group(int SA) {
-		// TODO Auto-generated method stub
-		return 0;
+		String result = connector.sendMessage(Messages.get_LED_group + " " + SA);
+		return Tools.String2int(result);
 	}
 
 	@Override
 	public int get_LED_position_on_switch(int SA) {
-		// TODO Auto-generated method stub
-		return 0;
+		String result = connector.sendMessage(Messages.get_LED_position_on_switch+ " " + SA);
+		return Tools.String2int(result);
 	}
 
 	@Override
 	public int get_LED_position_on_daughterBoard(int SA) {
-		// TODO Auto-generated method stub
-		return 0;
+		String result = connector.sendMessage(Messages.get_LED_position_on_daughterBoard + " " + SA);
+		return Tools.String2int(result);
 	}
 
 	@Override
 	public int get_LED_position_on_table(int SA) {
-		// TODO Auto-generated method stub
-		return 0;
+		String result = connector.sendMessage(Messages.get_LED_position_on_table + " " + SA);
+		return Tools.String2int(result);
 	}
 
 	@Override
 	public int get_LED_manufacturing_year(int SA) {
-		// TODO Auto-generated method stub
-		return 0;
+		String result = connector.sendMessage(Messages.get_LED_manufacturing_year + " " + SA);
+		return Tools.String2int(result);
 	}
 
 	@Override
 	public int get_LED_manufacturing_month(int SA) {
-		// TODO Auto-generated method stub
-		return 0;
+		String result = connector.sendMessage(Messages.get_LED_manufacturing_month + " " + SA);
+		return Tools.String2int(result);
 	}
 
 	@Override
 	public int get_LED_group_auto(int group) {
-		// TODO Auto-generated method stub
-		return 0;
+		String result = connector.sendMessage(Messages.get_LED_group_auto + " " + group);
+		return Tools.String2int(result);
 	}
 
 	@Override
 	public int get_LED_group_application(int group) {
-		// TODO Auto-generated method stub
-		return 0;
+		String result = connector.sendMessage(Messages.get_LED_group_application + " " + group);
+		return Tools.String2int(result);
 	}
 
 	@Override
 	public int get_LED_group_watchdog(int group) {
-		// TODO Auto-generated method stub
-		return 0;
+		String result = connector.sendMessage(Messages.get_LED_group_watchdog + " " + group);
+		return Tools.String2int(result);
 	}
 
 	@Override
 	public int get_LED_group_lux_target(int group) {
-		// TODO Auto-generated method stub
-		return 0;
+		String result = connector.sendMessage(Messages.get_LED_group_lux_target + " " + group);
+		return Tools.String2int(result);
 	}
 
 	@Override
 	public int get_LED_group_correction_interval(int group) {
-		// TODO Auto-generated method stub
-		return 0;
+		String result = connector.sendMessage(Messages.get_LED_group_correction_interval + " " + group);
+		return Tools.String2int(result);
 	}
 
 	@Override
 	public int get_LED_group_occupency_time(int group) {
-		// TODO Auto-generated method stub
-		return 0;
+		String result = connector.sendMessage(Messages.get_LED_group_occupency_time+ " " + group);
+		return Tools.String2int(result);
 	}
 
 	@Override
 	public int get_LED_group_night_threshold(int group) {
-		// TODO Auto-generated method stub
-		return 0;
+		String result = connector.sendMessage(Messages.get_LED_group_night_threshold + " " + group);
+		return Tools.String2int(result);
 	}
 
 	@Override
 	public int get_LED_group_followMe_previous(int group) {
-		// TODO Auto-generated method stub
-		return 0;
+		String result = connector.sendMessage(Messages.get_LED_group_followMe_previous + " " + group);
+		return Tools.String2int(result);
 	}
 
 	@Override
 	public int get_LED_group_followMe_next(int group) {
-		// TODO Auto-generated method stub
-		return 0;
+		String result = connector.sendMessage(Messages.get_LED_group_followMe_next + " " + group);
+		return Tools.String2int(result);
 	}
 
 	@Override
 	public int get_LED_group_ramping_up(int group) {
-		// TODO Auto-generated method stub
-		return 0;
+		String result = connector.sendMessage(Messages.get_LED_group_ramping_up + " " + group);
+		return Tools.String2int(result);
 	}
 
 	@Override
 	public int get_LED_group_ramping_down(int group) {
-		// TODO Auto-generated method stub
-		return 0;
+		String result = connector.sendMessage(Messages.get_LED_group_ramping_down + " " + group);
+		return Tools.String2int(result);
 	}
 
 	@Override
 	public int get_LED_group_lux_correctionFactor_night(int group) {
-		// TODO Auto-generated method stub
-		return 0;
+		String result = connector.sendMessage(Messages.get_LED_group_lux_correctionFactor_night + " " + group);
+		return Tools.String2int(result);
 	}
 
 	@Override
 	public int get_LED_group_lux_correctionFactor_day(int group) {
-		// TODO Auto-generated method stub
-		return 0;
+		String result = connector.sendMessage(Messages.get_LED_group_lux_correctionFactor_day + " " + group);
+		return Tools.String2int(result);
 	}
 
 	@Override
 	public int get_LED_group_start_Threshold(int group) {
-		// TODO Auto-generated method stub
-		return 0;
+		String result = connector.sendMessage(Messages.get_LED_group_start_Threshold + " " + group);
+		return Tools.String2int(result);
 	}
 
 	@Override
-	public int get_LED_group_temperature() {
-		// TODO Auto-generated method stub
-		return 0;
+	public int get_LED_group_temperature(int group) {
+		String result = connector.sendMessage(Messages.get_LED_group_temperature + " " + group);
+		return Tools.String2int(result);
 	}
 
 	@Override
-	public int get_LED_group_temperature_corrected() {
-		// TODO Auto-generated method stub
-		return 0;
+	public int get_LED_group_temperature_corrected(int group) {
+		String result = connector.sendMessage(Messages.get_LED_group_temperature + " " + group);
+		return Tools.String2int(result);
 	}
 
 	@Override
-	public int get_LED_group_lux() {
-		// TODO Auto-generated method stub
-		return 0;
+	public int get_LED_group_lux(int group) {
+		String result = connector.sendMessage(Messages.get_LED_group_lux + " " + group);
+		return Tools.String2int(result);
 	}
 
 	@Override
-	public int get_LED_group_lux_corrected() {
-		// TODO Auto-generated method stub
-		return 0;
+	public int get_LED_group_lux_corrected(int group) {
+		String result = connector.sendMessage(Messages.get_LED_group_lux_corrected + " " + group);
+		return Tools.String2int(result);
 	}
 
 	@Override
 	public int get_LED_group_occupency_time_505(int group) {
-		// TODO Auto-generated method stub
-		return 0;
+		String result = connector.sendMessage(Messages.get_LED_group_occupency_time_505 + " " + group);
+		return Tools.String2int(result);
 	}
 
 	@Override
 	public int get_LED_group_sensorAdress(int group) {
-		// TODO Auto-generated method stub
-		return 0;
+		String result = connector.sendMessage(Messages.get_LED_group_sensorAdress + " " + group);
+		return Tools.String2int(result);
 	}
 
 	@Override
 	public boolean set_LED_Imax(int SA, int value) {
-		// TODO Auto-generated method stub
-		return false;
+		String result = connector.sendMessage(Messages.set_LED_Imax + " " + SA + " " + value);
+		return Tools.String2Boolean(result);
 	}
 
 	@Override
 	public boolean set_LED_percentage(int SA, int percentage) {
-		// TODO Auto-generated method stub
-		return false;
+		String result = connector.sendMessage(Messages.set_LED_percentage + " " + SA + " " + percentage);
+		return Tools.String2Boolean(result);
 	}
 
 	@Override
 	public boolean set_LED_start_time(int SA, int value) {
-		// TODO Auto-generated method stub
-		return false;
+		String result = connector.sendMessage(Messages.set_LED_start_time + " " + SA + " " + value);
+		return Tools.String2Boolean(result);
 	}
 
 	@Override
 	public boolean set_LED_stop_time(int SA, int value) {
-		// TODO Auto-generated method stub
-		return false;
+		String result = connector.sendMessage(Messages.set_LED_stop_time + " " + SA + " " + value);
+		return Tools.String2Boolean(result);
 	}
 
 	@Override
 	public boolean set_LED_group(int SA, int group) {
-		// TODO Auto-generated method stub
-		return false;
+		String result = connector.sendMessage(Messages.set_LED_group + " " + SA + " " + group);
+		return Tools.String2Boolean(result);
 	}
 
 	@Override
+	@Deprecated
 	public boolean setGroupLightPercentage(int group, int percentage) {
-		// TODO Auto-generated method stub
+		// TODO
 		return false;
 	}
 
 	@Override
+	@Deprecated
 	public boolean setIndividualLightPercentage(int SA, int percentage) {
-		// TODO Auto-generated method stub
-		return false;
+		return set_LED_percentage(SA, percentage);		
 	}
 
 	@Override
 	public boolean set_LED_group_auto(int group, int value) {
-		// TODO Auto-generated method stub
-		return false;
+		String result = connector.sendMessage(Messages.set_LED_group_auto + " " + group + " " + value);
+		return Tools.String2Boolean(result);
 	}
 
 	@Override
 	public boolean set_LED_group_application(int group, int value) {
-		// TODO Auto-generated method stub
-		return false;
+		String result = connector.sendMessage(Messages.set_LED_group_application + " " + group + " " + value);
+		return Tools.String2Boolean(result);
 	}
 
 	@Override
 	public boolean set_LED_group_watchdog(int group, int value) {
-		// TODO Auto-generated method stub
-		return false;
+		String result = connector.sendMessage(Messages.set_LED_group_watchdog + " " + group + " " + value);
+		return Tools.String2Boolean(result);
 	}
 
 	@Override
 	public boolean set_LED_group_lux_target(int group, int value) {
-		// TODO Auto-generated method stub
-		return false;
+		String result = connector.sendMessage(Messages.set_LED_group_lux_target + " " + group + " " + value);
+		return Tools.String2Boolean(result);
 	}
 
 	@Override
 	public boolean set_LED_group_correction_interval(int group, int value) {
-		// TODO Auto-generated method stub
-		return false;
+		String result = connector.sendMessage(Messages.set_LED_group_correction_interval + " " + group + " " + value);
+		return Tools.String2Boolean(result);
 	}
 
 	@Override
 	public boolean set_LED_group_occupency_time(int group, int value) {
-		// TODO Auto-generated method stub
-		return false;
+		String result = connector.sendMessage(Messages.set_LED_group_occupency_time + " " + group + " " + value);
+		return Tools.String2Boolean(result);
 	}
 
 	@Override
 	public boolean set_LED_group_night_threshold(int group, int value) {
-		// TODO Auto-generated method stub
-		return false;
+		String result = connector.sendMessage(Messages.set_LED_group_night_threshold + " " + group + " " + value);
+		return Tools.String2Boolean(result);
 	}
 
 	@Override
 	public boolean set_LED_group_followMe_previous(int group, int value) {
-		// TODO Auto-generated method stub
-		return false;
+		String result = connector.sendMessage(Messages.set_LED_group_followMe_previous + " " + group + " " + value);
+		return Tools.String2Boolean(result);
 	}
 
 	@Override
 	public boolean set_LED_group_followMe_next(int group, int value) {
-		// TODO Auto-generated method stub
-		return false;
+		String result = connector.sendMessage(Messages.set_LED_group_followMe_next + " " + group + " " + value);
+		return Tools.String2Boolean(result);
 	}
 
 	@Override
 	public boolean set_LED_group_ramping_up(int group, int value) {
-		// TODO Auto-generated method stub
-		return false;
+		String result = connector.sendMessage(Messages.set_LED_group_ramping_up + " " + group + " " + value);
+		return Tools.String2Boolean(result);
 	}
 
 	@Override
 	public boolean set_LED_group_ramping_down(int group, int value) {
-		// TODO Auto-generated method stub
-		return false;
+		String result = connector.sendMessage(Messages.set_LED_group_ramping_down + " " + group + " " + value);
+		return Tools.String2Boolean(result);
 	}
 
 	@Override
 	public boolean set_LED_group_lux_correctionFactor_night(int group, int value) {
-		// TODO Auto-generated method stub
-		return false;
+		String result = connector.sendMessage(Messages.set_LED_group_lux_correctionFactor_night + " " + group + " " + value);
+		return Tools.String2Boolean(result);
 	}
 
 	@Override
 	public boolean set_LED_group_lux_correctionFactor_day(int group, int value) {
-		// TODO Auto-generated method stub
-		return false;
+		String result = connector.sendMessage(Messages.set_LED_group_lux_correctionFactor_day + " " + group + " " + value);
+		return Tools.String2Boolean(result);
 	}
 
 	@Override
 	public boolean set_LED_group_start_Threshold(int group, int value) {
-		// TODO Auto-generated method stub
-		return false;
+		String result = connector.sendMessage(Messages.set_LED_group_start_Threshold + " " + group + " " + value);
+		return Tools.String2Boolean(result);
 	}
 
 	
