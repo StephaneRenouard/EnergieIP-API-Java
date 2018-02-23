@@ -96,7 +96,7 @@ public class CoreConnector {
 			message = "1234567" + message + "\n";
 			
 			if(DEBUG){
-				System.out.println("Sending: " + message);
+				System.out.println("Sending: " + message.trim());
 			}
 			outToServer.writeBytes(message);
 			
