@@ -4,7 +4,7 @@ import com.energieip.api.connector.CoreConnector;
 import com.energieip.api.connector.Messages;
 import com.energieip.api.interfaces.EnergieAPIInterface;
 import com.energieip.api.interfaces.EnergieCOMInterface;
-import com.energieip.api.tools.Tools;
+import com.energieip.api.utilities.Tools;
 
 /**
  * ENERGIEIP JAVA API 
@@ -116,13 +116,11 @@ public class EnergieAPI implements EnergieAPIInterface, EnergieCOMInterface {
 		
 		int return_rack_id = -1; // error code
 		return_rack_id = Tools.String2int((connector.sendMessage(Messages.get_RackID)));
-		
 		return return_rack_id;
 	}
 
 	@Override
-	public boolean set_rackID(int value) {
-		
+	public boolean set_rackID(int value) {	
 		String result = connector.sendMessage(Messages.set_RackID + " " + value);
 		return  Tools.String2Boolean(result);
 	}

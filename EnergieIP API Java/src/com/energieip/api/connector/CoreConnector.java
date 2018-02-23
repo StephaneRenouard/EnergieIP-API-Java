@@ -9,7 +9,7 @@ import java.net.UnknownHostException;
 
 
 import com.energieip.api.Parameters;
-import com.energieip.api.tools.Tools;
+import com.energieip.api.utilities.Tools;
 
 /**
  * This class implements the connection mecanism to CORE
