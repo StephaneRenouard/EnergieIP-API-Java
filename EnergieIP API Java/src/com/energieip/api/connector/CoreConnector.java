@@ -78,12 +78,13 @@ public class CoreConnector {
 		Boolean result = false;
 		string = string.trim();
 		
-		if(string.matches("true")){
+		if(string.contains("true")){
 			result = true;
-		}else if(string.matches("false")) {
+		}else if(string.contains("false")) {
 			result = false;
 		}else{
-			System.err.println("[Coreconnector] bad syntax");
+			System.err.println("[Coreconnector - String2Boolean] content is: " + string);
+			System.err.println("[Coreconnector - String2Boolean] bad syntax");
 		}
 		
 		return result;

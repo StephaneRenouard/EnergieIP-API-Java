@@ -19,7 +19,13 @@ public class Test_Connection {
 		
 		energieAPI.connect("stef", "stef");
 		
-		System.out.println(energieAPI.get_connectionStatus());
+		boolean status = energieAPI.get_connectionStatus();
+		
+		System.out.println("Connection status is " + status);
+		
+		status = energieAPI.get_testConnection();
+		
+		System.out.println("testConnection is " + status);
 		
 		
 	}
