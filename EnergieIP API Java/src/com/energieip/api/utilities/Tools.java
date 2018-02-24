@@ -31,8 +31,7 @@ public class Tools {
 	 * @return int
 	 */
 	public static int String2int(String string){
-		
-		
+				
 		int result = -1;
 		string = string.trim();
 		
