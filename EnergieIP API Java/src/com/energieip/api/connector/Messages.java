@@ -46,9 +46,8 @@ public class Messages {
 	static final public String get_List_TOR_drivers = "get_List_TOR_drivers";
 	static final public String get_List_HVAC_drivers = "get_List_HVAC_drivers";
 	static final public String get_List_groups = "get_List_groups";
-
 	@Deprecated
-	static final public String get_List_Shutter_drivers = "get_List_Shutter_drivers";
+	static final public String get_List_Shutter_drivers = "get_List_Blind_drivers";
 	
 	
 	// Watchdog
