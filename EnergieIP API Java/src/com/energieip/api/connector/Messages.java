@@ -255,6 +255,7 @@ public class Messages {
 	static final public String  get_HVAC_parameters_deadband_comfort_mode = "get_HVAC_parameters_deadband_comfort_mode"; // RW, 0-20, �C, def 2
 	static final public String  get_HVAC_parameters_deadBand_sleep_mode = "get_HVAC_parameters_deadBand_sleep_mode"; // RW, 0-20, �C, def 4
 	static final public String  get_HVAC_parameters_deadBand_reduced_mode = "get_HVAC_parameters_deadBand_reduced_mode"; // RW, 0-20, �C, def 6
+	
 	static final public String  get_HVAC_parameters_proportionalBand_cold = "get_HVAC_parameters_proportionalBand_cold"; // RW, 2-10, C, def 2
 	static final public String  get_HVAC_parameters_limit_valve_opening_cold = "get_HVAC_parameters_limit_valve_opening_cold"; // RW, 10-100, %, def 100
 	static final public String  get_HVAC_parameters_proportionalBand_hot = "get_HVAC_parameters_proportionalBand_hot"; // RW, 2-10, C, def 2
@@ -267,6 +268,7 @@ public class Messages {
 	static final public String  get_HVAC_parameters_fan_threshold_low = "get_HVAC_parameters_fan_threshold_low"; // RW, 10-50, %, def 20
 	static final public String  get_HVAC_parameters_fan_threshold_high = "get_HVAC_parameters_fan_threshold_high"; // RW, 10-50, %, def 80
 	static final public String  get_HVAC_parameters_fan_valve_coef = "get_HVAC_parameters_fan_valve_coef"; // RW, 1-10000, %, def 100
+	
 	static final public String  get_HVAC_parameters_airQuality_target = "get_HVAC_parameters_airQuality_target"; // RW, 0-30000, ppm, def 700
 	static final public String  get_HVAC_parameters_airQuality_proportionalBand = "get_HVAC_parameters_airQuality_proportionalBand"; // RW, 0-30000, ppm, def 800
 	static final public String  get_HVAC_parameters_VaV_opening_max = "get_HVAC_parameters_VaV_opening_max"; // RW, 0-100, %, def 100
