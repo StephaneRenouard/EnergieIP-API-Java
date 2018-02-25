@@ -369,16 +369,16 @@ public class Messages {
 	static final public String get_IO_input_2 = "get_IO_input_2";
 	static final public String get_IO_input_3 = "get_IO_input_3";
 	static final public String get_IO_input_4 = "get_IO_input_4";
+	static final public String get_IO_input_5 = "get_IO_input_5";
+	static final public String get_IO_input_6 = "get_IO_input_6";
+	static final public String get_IO_input_7 = "get_IO_input_7";
+	static final public String get_IO_input_8 = "get_IO_input_8";
 	static final public String get_IO_input_all = "get_IO_input_all";
 	
 	static final public String get_IO_output_1 = "get_IO_output_1";
 	static final public String get_IO_output_2 = "get_IO_output_2";
 	static final public String get_IO_output_3 = "get_IO_output_3";
 	static final public String get_IO_output_4 = "get_IO_output_4";
-	static final public String get_IO_output_5 = "get_IO_output_5";
-	static final public String get_IO_output_6 = "get_IO_output_6";
-	static final public String get_IO_output_7 = "get_IO_output_7";
-	static final public String get_IO_output_8 = "get_IO_output_8";
 	static final public String get_IO_output_all = "get_IO_output_all";
 	
 	// GET from ID2
@@ -399,10 +399,6 @@ public class Messages {
 	static final public String set_IO_output_2 = "set_IO_output_2";
 	static final public String set_IO_output_3 = "set_IO_output_3";
 	static final public String set_IO_output_4 = "set_IO_output_4";
-	static final public String set_IO_output_5 = "set_IO_output_5";
-	static final public String set_IO_output_6 = "set_IO_output_6";
-	static final public String set_IO_output_7 = "set_IO_output_7";
-	static final public String set_IO_output_8 = "set_IO_output_8";
 	static final public String set_IO_output_all = "set_IO_output_all";
 	
 	
