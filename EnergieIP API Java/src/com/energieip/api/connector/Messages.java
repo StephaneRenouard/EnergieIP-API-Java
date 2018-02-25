@@ -303,6 +303,8 @@ public class Messages {
 	static final public String  set_HVAC_group_def_input_tor1 = "set_HVAC_group_def_input_tor1";
 	static final public String  set_HVAC_group_def_input_tor2 = "set_HVAC_group_def_input_tor2";
 	static final public String  set_HVAC_group_def_input_0_10V = "set_HVAC_group_def_input_0_10V";
+	static final public String  set_HVAC_group_def_output_valve_1 = "set_HVAC_group_def_output_valve_1";
+	static final public String  set_HVAC_group_def_output_valve_2 = "set_HVAC_group_def_output_valve_2";
 	static final public String  set_HVAC_group_def_output_0_10V_1 = "set_HVAC_group_def_output_0_10V_1";
 	static final public String  set_HVAC_group_def_output_0_10V_2 = "set_HVAC_group_def_output_0_10V_2";
 	static final public String  set_HVAC_group_def_polarity_relay_window_closed = "set_HVAC_group_def_polarity_relay_window_closed";
