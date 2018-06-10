@@ -104,6 +104,9 @@ public interface EnergieAPIInterface {
 	int get_LED_group_occupency_time_505(int group);
 	int get_LED_group_sensorAdress(int group);
 	
+	// GET from API
+	int get_LED_group_percentage(int group);
+	
 	
 	// SET from ID11
 	boolean set_LED_Imax(int SA, int value);   // mA
@@ -137,6 +140,8 @@ public interface EnergieAPIInterface {
 	boolean set_LED_group_lux_correctionFactor_day(int group, int value);
 	boolean set_LED_group_start_Threshold(int group, int value);
 
+	// SET from API
+	boolean set_LED_group_percentage(int group, int value);
 	
 	
 	/*

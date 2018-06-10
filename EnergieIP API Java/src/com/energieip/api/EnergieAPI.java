@@ -633,6 +633,14 @@ public class EnergieAPI implements EnergieAPIInterface, EnergieCOMInterface {
 		String result = connector.sendMessage(Messages.get_LED_group_sensorAdress + " " + group);
 		return Tools.String2int(result);
 	}
+	
+	@Override
+	public int get_LED_group_percentage(int group) {
+		String result = connector.sendMessage(Messages.get_LED_group_percentage + " " + group);
+		return Tools.String2int(result);
+	}
+	
+	
 
 	@Override
 	public boolean set_LED_Imax(int SA, int value) {
@@ -761,6 +769,11 @@ public class EnergieAPI implements EnergieAPIInterface, EnergieCOMInterface {
 		return Tools.String2Boolean(result);
 	}
 
+	@Override
+	public boolean set_LED_group_percentage(int group, int value) {
+		String result = connector.sendMessage(Messages.set_LED_group_percentage + " " + group + " " + value);
+		return Tools.String2Boolean(result);
+	}
 	
 	
 	/*
@@ -2113,6 +2126,12 @@ boolean return_value = false;
 		
 		return set_data2(data2);
 	}
+
+
+
+
+
+
 
 
 	
