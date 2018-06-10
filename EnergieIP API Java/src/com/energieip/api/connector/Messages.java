@@ -116,6 +116,9 @@ public class Messages {
 	static final public String get_LED_group_occupency_time_505 = "get_LED_group_occupency_time_505";
 	static final public String get_LED_group_sensorAdress = "get_LED_group_sensorAdress";
 	
+	// GET from API
+	static final public String get_LED_group_percentage = "get_LED_group_percentage";
+	
 	
 	// SET from ID11
 	static final public String set_LED_Imax = "set_LED_Imax";   // mA
@@ -143,7 +146,9 @@ public class Messages {
 	static final public String set_LED_group_lux_correctionFactor_night = "set_LED_group_lux_correctionFactor_night";
 	static final public String set_LED_group_lux_correctionFactor_day = "set_LED_group_lux_correctionFactor_day";
 	static final public String set_LED_group_start_Threshold = "set_LED_group_start_Threshold";
-
+	
+	// SET from API
+	static final public String set_LED_group_percentage = "set_LED_group_percentage";
 	
 
 	// ------------------------------------------------------------------------------------------------------------------------	
