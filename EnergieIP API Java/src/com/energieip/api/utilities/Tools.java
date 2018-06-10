@@ -19,6 +19,7 @@ public class Tools {
 		}else{
 			System.err.println("[TOOLS - String2Boolean] content is: " + string);
 			System.err.println("[TOOLS - String2Boolean] bad syntax");
+			result = false;
 		}
 		
 		return result;
@@ -33,6 +34,8 @@ public class Tools {
 	public static int String2int(String string){
 				
 		int result = -1;
+		
+		if(string!=null){
 		string = string.trim();
 		
 		try{
@@ -40,6 +43,9 @@ public class Tools {
 		}catch(Exception e){
 			System.err.println("[TOOLS - String2int] content is: " + string);
 			System.err.println("[TOOLS - String2int] bad syntax");
+		}
+		}else{
+			System.err.println("[TOOLS - String2int] server returned a null value");
 		}
 		
 		return result;
