@@ -117,7 +117,7 @@ public class Messages {
 	static final public String get_LED_group_sensorAdress = "get_LED_group_sensorAdress";
 	
 	// GET from API
-	static final public String get_LED_group_percentage = "get_LED_group_percentage";
+	static final public String get_LED_group_percentage = "get_LED_group_percentage"; //%
 	
 	
 	// SET from ID11
@@ -148,7 +148,7 @@ public class Messages {
 	static final public String set_LED_group_start_Threshold = "set_LED_group_start_Threshold";
 	
 	// SET from API
-	static final public String set_LED_group_percentage = "set_LED_group_percentage";
+	static final public String set_LED_group_percentage = "set_LED_group_percentage";  //%
 	
 
 	// ------------------------------------------------------------------------------------------------------------------------	
