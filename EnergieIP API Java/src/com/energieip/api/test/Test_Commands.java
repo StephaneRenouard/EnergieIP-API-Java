@@ -84,7 +84,12 @@ public class Test_Commands {
 		
 		
 		
+		//energieAPI.set_BLIND_1_down(105);
+		//energieAPI.set_BLIND_1_stop(105);
 		
+		
+		//energieAPI.setShutterDown(105);
+		//energieAPI.setShutterStop(105);
 
 	}
 

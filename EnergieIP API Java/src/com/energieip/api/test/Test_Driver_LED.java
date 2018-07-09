@@ -27,15 +27,15 @@ public class Test_Driver_LED {
 		 
 		 int SA = 21;
 		 
-		 System.out.println(energieAPI.get_LED_percentage(SA));
+		 //System.out.println(energieAPI.get_LED_percentage(SA));
 		 
 		 //System.out.println(energieAPI.set_LED_percentage(SA, 70));
 		 
-		 System.out.println(energieAPI.set_LED_group_percentage(3, 70));
+		 //System.out.println(energieAPI.set_LED_group_percentage(3, 70));
 		 		 		 
-		 System.out.println(energieAPI.get_LED_group_percentage(3));
+		 //System.out.println(energieAPI.get_LED_group_percentage(3));
 		 
-		 System.out.println(energieAPI.set_LED_group_percentage(3, 20));
+		 //System.out.println(energieAPI.set_LED_group_percentage(3, 20));
 		 
 		 System.out.println(energieAPI.get_LED_group_percentage(3));
 		
