@@ -867,38 +867,128 @@ public class EnergieAPI implements EnergieAPIInterface, EnergieCOMInterface {
 
 	@Override
 	public boolean set_BLIND_1_up(int SA) {
-		// TODO Auto-generated method stub
-		return false;
+		boolean return_value = false;
+		try {
+			String result = connector.sendMessage(Messages.set_BLIND_1_up + " " + SA);
+
+			switch (result.trim()) {
+			case "true":
+				return_value = true;
+				break;
+			case "false":
+				return_value = false;
+			default:
+				break;
+			}
+		} catch (Exception e) {
+			// nothing to do
+		}
+		return return_value;
 	}
 
 	@Override
 	public boolean set_BLIND_1_down(int SA) {
-		// TODO Auto-generated method stub
-		return false;
+		boolean return_value = false;
+		try {
+			String result = connector.sendMessage(Messages.set_BLIND_1_down + " " + SA);
+
+			switch (result.trim()) {
+			case "true":
+				return_value = true;
+				break;
+			case "false":
+				return_value = false;
+			default:
+				break;
+			}
+		} catch (Exception e) {
+			// nothing to do
+		}
+		return return_value;
 	}
 
 	@Override
 	public boolean set_BLIND_1_stop(int SA) {
-		// TODO Auto-generated method stub
-		return false;
+		boolean return_value = false;
+		try {
+			String result = connector.sendMessage(Messages.set_BLIND_1_stop + " " + SA);
+
+			switch (result.trim()) {
+			case "true":
+				return_value = true;
+				break;
+			case "false":
+				return_value = false;
+			default:
+				break;
+			}
+		} catch (Exception e) {
+			// nothing to do
+		}
+		return return_value;
 	}
 
 	@Override
 	public boolean set_BLIND_2_up(int SA) {
-		// TODO Auto-generated method stub
-		return false;
+		boolean return_value = false;
+		try {
+			String result = connector.sendMessage(Messages.set_BLIND_2_up + " " + SA);
+
+			switch (result.trim()) {
+			case "true":
+				return_value = true;
+				break;
+			case "false":
+				return_value = false;
+			default:
+				break;
+			}
+		} catch (Exception e) {
+			// nothing to do
+		}
+		return return_value;
 	}
 
 	@Override
 	public boolean set_BLIND_2_down(int SA) {
-		// TODO Auto-generated method stub
-		return false;
+		boolean return_value = false;
+		try {
+			String result = connector.sendMessage(Messages.set_BLIND_2_down + " " + SA);
+
+			switch (result.trim()) {
+			case "true":
+				return_value = true;
+				break;
+			case "false":
+				return_value = false;
+			default:
+				break;
+			}
+		} catch (Exception e) {
+			// nothing to do
+		}
+		return return_value;
 	}
 
 	@Override
 	public boolean set_BLIND_2_stop(int SA) {
-		// TODO Auto-generated method stub
-		return false;
+		boolean return_value = false;
+		try {
+			String result = connector.sendMessage(Messages.set_BLIND_2_stop + " " + SA);
+
+			switch (result.trim()) {
+			case "true":
+				return_value = true;
+				break;
+			case "false":
+				return_value = false;
+			default:
+				break;
+			}
+		} catch (Exception e) {
+			// nothing to do
+		}
+		return return_value;
 	}
 
 	@Deprecated
