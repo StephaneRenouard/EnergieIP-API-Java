@@ -15,7 +15,7 @@ public class Test_Commands {
 
 		EnergieAPI energieAPI = new EnergieAPI();
 		
-		energieAPI.connect("stef", "stef", 0);
+		energieAPI.connect("test", "test", 0);
 
 		/*
 		 * try { energieAPI.connect(); } catch (UnknownHostException e) { //
@@ -91,6 +91,8 @@ public class Test_Commands {
 		//energieAPI.setShutterDown(105);
 		//energieAPI.setShutterStop(105);
 
+		System.out.println(energieAPI.get_list_groups());
+		
 	}
 
 }
