@@ -17,7 +17,7 @@ public class Test_Connection {
 		
 		EnergieAPI energieAPI = new EnergieAPI();
 		
-		energieAPI.connect("stef", "stef");
+		energieAPI.connect("test", "test");
 		
 		boolean status = energieAPI.get_connectionStatus();
 		

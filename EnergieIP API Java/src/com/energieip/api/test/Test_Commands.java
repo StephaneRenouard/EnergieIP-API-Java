@@ -91,7 +91,7 @@ public class Test_Commands {
 		//energieAPI.setShutterDown(105);
 		//energieAPI.setShutterStop(105);
 
-		System.out.println(energieAPI.get_list_groups());
+		//System.out.println(energieAPI.get_list_groups());
 		
 	}
 
