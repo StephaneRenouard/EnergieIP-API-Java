@@ -92,12 +92,13 @@ public class CoreConnector {
 			}
 			
 			DataOutputStream outToServer = new DataOutputStream(socket.getOutputStream());
-
-			message = "1234567" + message + "\n";
 			
 			if(DEBUG){
 				System.out.println("Sending: " + message.trim());
 			}
+			
+			message = "1234567" + message + "\n";
+			
 			outToServer.writeBytes(message);
 			
 			if(DEBUG){

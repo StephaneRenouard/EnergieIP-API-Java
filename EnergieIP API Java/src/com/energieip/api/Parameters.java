@@ -9,8 +9,8 @@ public class Parameters {
 	public static String CORE_IP = "192.168.0.47";
 	public static int CORE_PORT = 8082;
 	
-	public static String USERNAME = "";
-	public static String PASSWORD = "";
+	public static String USERNAME = "test";
+	public static String PASSWORD = "test";
 	
 	public static int CONNECTION_MODE = 0;
 
