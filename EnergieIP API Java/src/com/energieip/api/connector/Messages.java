@@ -148,7 +148,8 @@ public class Messages {
 	static final public String set_LED_group_start_Threshold = "set_LED_group_start_Threshold";
 	
 	// SET from API
-	static final public String set_LED_group_percentage = "set_LED_group_percentage";  //%
+	static final public String set_LED_group_percentage = "set_LED_group_percentage";  //% for group
+	static final public String set_LED_groups_percentage = "set_LED_groups_percentage"; //% for groups
 	
 
 	// ------------------------------------------------------------------------------------------------------------------------	

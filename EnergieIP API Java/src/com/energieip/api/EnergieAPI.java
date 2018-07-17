@@ -641,6 +641,17 @@ public class EnergieAPI implements EnergieAPIInterface, EnergieCOMInterface {
 	}
 	
 	
+	public boolean set_LED_groups_percentage(int[] groups, int percentage){
+		String mess = Messages.set_LED_groups_percentage;
+		mess = mess + " ";		
+		for (int i = 0; i < groups.length; i++) {
+			mess = mess + groups[i] + " ";
+		}				
+		mess = mess + percentage;
+		String result = connector.sendMessage(mess);
+		return Tools.String2Boolean(result);
+	}
+	
 
 	@Override
 	public boolean set_LED_Imax(int SA, int value) {
