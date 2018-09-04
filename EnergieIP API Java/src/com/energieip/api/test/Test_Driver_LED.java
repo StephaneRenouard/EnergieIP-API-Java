@@ -15,6 +15,8 @@ public class Test_Driver_LED {
 	 */
 	public Test_Driver_LED() {
 		
+		System.out.println("Starting test session");
+		
 		EnergieAPI energieAPI = new EnergieAPI();
 		energieAPI.connect("test", "test");
 		
@@ -25,10 +27,10 @@ public class Test_Driver_LED {
 		 }
 		 
 		 
-		 int SA = 23;
-		 int GROUP = 13;
+		 int SA = 21;
+		 int GROUP = 2;
 		 
-		 //System.out.println(energieAPI.get_LED_percentage(SA));
+		 System.out.println(energieAPI.get_LED_percentage(SA));
 		 
 		 //System.out.println(energieAPI.set_LED_percentage(SA, 0));
 		 
@@ -40,11 +42,12 @@ public class Test_Driver_LED {
 		 
 		 //System.out.println(energieAPI.get_LED_group_percentage(3));
 		
+		 /*
 		int[] array = new int[2];
 		array[0] = 12;
 		array[1] = 13;
 		System.out.println(energieAPI.set_LED_groups_percentage(array, 10));
-		 
+		 */
 				
 	}
 
