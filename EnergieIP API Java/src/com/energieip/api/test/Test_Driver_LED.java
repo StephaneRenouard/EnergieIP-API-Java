@@ -27,7 +27,7 @@ public class Test_Driver_LED {
 		 }
 		 
 		 
-		 int SA = 7;
+		 int SA = 5;
 		 int GROUP = 1;
 		 
 		 System.out.println(energieAPI.get_LED_percentage(SA));
