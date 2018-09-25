@@ -34,7 +34,7 @@ public class Test_Driver_LED {
 		 
 		 //System.out.println(energieAPI.set_LED_percentage(SA, 0));
 		 
-		 //System.out.println(energieAPI.set_LED_group_percentage(GROUP, 30));
+		 System.out.println(energieAPI.set_LED_group_percentage(GROUP, 0));
 		 		 		 
 		 //System.out.println(energieAPI.get_LED_group_percentage(3));
 		 
